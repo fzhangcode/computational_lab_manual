@@ -2,7 +2,7 @@ Title:			Getting Started in Flaherty Lab
 Subtitle:		Handbook for New Members
 Author:			Yifan Zhao (2014), Tete Zhang (2014), Yuting He, Fan Zhang, Tim DeFreitas, Spencer Keilich, Hachem Saddiki, Patrick Flaherty  
 Affiliation:	Worcester Polytechnic Institute
-Date:			May 21, 2014  
+Date:			May 28, 2014  
 Copyright:		
 Keywords:		
 
@@ -56,7 +56,7 @@ A terminal application allows you to connect to our server, check the directorie
 
 **Windows**
 
-X-win32 can be download from campus. Detailed instructions for installing and configuring X-Win32 can be found on the [CCC website] (http://www.wpi.edu/Academics/CCC/Help/Software/xwin.html).
+X-win32 can be download from campus. Detailed instructions for installing and configuring X-Win32 can be found on the [CCC website](http://www.wpi.edu/Academics/CCC/Help/Software/xwin.html).
 Instructions for X-Win32 configuration can be found at <http://www.wpi.edu/Academics/CCC/Help/Software/xwin.html>. However, there are some minor changes in both installation procedures and configuration procedures. 
 
 For installation, most steps lists on ccc website stay the same, but the folder "*X-Win32 9.2*" doesn't exist. Instead of looking for this folder, directly double click on the shortcut "*Install X-Win32 2012 (1178)*". 
@@ -212,7 +212,9 @@ You can either download [Git for Windows](http://msysgit.github.com/) or [Source
 
 The configuration steps below are for SourceTree. After downloading it, install all as default.
 
-Click Clone/New -> clone repository ->Source: `ssh://username@redwood.wpi.edu/home/pjflaherty/git/gettingstarted.git`
+Click Clone/New -> clone repository ->Source: `ssh://username@redwood.wpi.edu/home/pjflaherty/flahertylab/git/common.git`
+
+You need to enter your password for this.
 
 Target: should be somewhere safe.
 
@@ -223,8 +225,11 @@ Clone Type: Standard.
 <http://www.sourcetreeapp.com>.
 
 Run Source Tree -> Clone Repository ->
-Source Path: /Volumes/flahertylab
+Source Path:`ssh://username@redwood.wpi.edu/home/pjflaherty/flahertylab/git/common.git`
+
 Destination Path: should be somewhere safe. 
+
+You need to enter your redwood password for this.
 
 **Linux:**
 
