@@ -2,15 +2,11 @@ Title:			Getting Started in Flaherty Lab
 Subtitle:		Handbook for New Members
 Author:			Yifan Zhao (2014), Tete Zhang (2014), Yuting He, Fan Zhang, Tim DeFreitas, Spencer Keilich, Hachem Saddiki, Patrick Flaherty  
 Affiliation:	Worcester Polytechnic Institute
-Date:				May 14, 2014  
+Date:			May 21, 2014  
 Copyright:		
 Keywords:		
 
-TODO: Write sction on starcluster
-
-TODO: Write section on MPI
-
-Last update: May 27, 2014
+Last update: May 14, 2014
 
 
 # Your First Day #
@@ -21,19 +17,19 @@ Congratulations, and welcome! This guide is written by people who've been where 
 There are a few things you need to do to get started.
 
 1. [Request your account on our server `redwood.wpi.edu` from Sia Najafi.](#serversetup)
-2. Request to be added to our mailing list `flahertylab@wpi.edu`. The list is at [http://www.wpi.edu/+mailinglist](http://www.wpi.edu/+mailinglist). Scroll all the  "change list" option and enter `flahertylab`
+2. Request to be added to our mailing list `flahertylab@wpi.edu`. The webpage for him to do that can be found [here](https://www.wpi.edu/Academics/CCC/Services/Email/mailinglist.html).
 3. Clone the `common` repository using git into the Research folder in your home directory on `redwood.wpi.edu`.
 4. Set up your environment on `redwood.wpi.edu`
 
 Once you've set up your environment on redwood, then you'll need to start learning about the software, systems and culture for the lab. Read on...
 
-## <a name = "serversetup">Requesting access to `redwood.wpi.edu` </a> ##
+## <a name = "serversetup"></a>Requesting Access to `redwood.wpi.edu`  ##
 `redwood.wpi.edu` is our primary linux server for computation. It's a 64 core machine with 256Gb RAM. In addition to onboard storage, we have a 9Tb high speed drive +1Tb solid-state drive attached to redwood via NFS for storing our data. 
 
 1. Ask Prof. Flaherty to add you to the flahertylab group through CCC. The webpage to do that is [here](http://www.wpi.edu/+gred).
 
 
-2. Send the following email to **Sia Najafi** and cc Prof. Flaherty for an account on redwood. It is _very important_ that he adds your account under the `flahertylab` unix group. 
+2. Send the following email to **Sia Najafi** and cc Prof. Flaherty for an account on redwood. It is _very important_ that Sia adds your account under the `flahertylab` unix group. 
 
 	Your email should read as follows
 
@@ -48,13 +44,38 @@ Once you've set up your environment on redwood, then you'll need to start learni
 	> Thank you,
 	> Your name
 
-3. Once you have your account name and password, change your password using `yppasswd`.
+3. Once you have your account name and password, change your password using `yppasswd`. (You need to finish Steps 3, 4, and 5 in a terminal application. Please see [the next section](#ta) for details.)
 
 4. Check that you are in the flahertylab group using the command `groups` at the command prompt on redwood. If you don't see `flahertylab` as the first group, you need to speak with Prof. Flaherty to get that fixed.
 
 4. Use `ypchsh` to change your default shell to `/bin/bash`.
 
-## Cloning the `common` repository ##
+##<a name = "ta"></a> Terminal Application ##
+
+A terminal application allows you to connect to our server, check the directories and files on it, and perform computations. Here are examples of commonly used terminal applications. After you installed them, and if you are not familiar with Linux commands, you can read the section about [Linux commands](#lc).
+
+**Windows**
+
+X-win32 can be download from campus. Detailed instructions for installing and configuring X-Win32 can be found on the [CCC website] (http://www.wpi.edu/Academics/CCC/Help/Software/xwin.html).
+Instructions for X-Win32 configuration can be found at <http://www.wpi.edu/Academics/CCC/Help/Software/xwin.html>. However, there are some minor changes in both installation procedures and configuration procedures. 
+
+For installation, most steps lists on ccc website stay the same, but the folder "*X-Win32 9.2*" doesn't exist. Instead of looking for this folder, directly double click on the shortcut "*Install X-Win32 2012 (1178)*". 
+
+This is how you configure it:
+
+1. Click on X-Win32 and the configuration window will pop-up.
+2. On the right hand side, click on Wizard, select "ssh" and name it "redwood".
+3. Type in the host name: redwood.wpi.edu.
+4. ONLY type in your login and then click next. This is for security reasons: you always want X-Win32 to prompt you for your password .
+5. Choose linux, click finish, your redwood connection will appear in the initial configuration window.
+6. Now, drag your redwood connection under Autostart folder, click OK.
+7. Click again on X-Win32 to get connected to redwood.
+
+**Mac:**
+
+Terminal is the Mac equivalence of X-win32. After opening up the Terminal application, type in command `ssh yourusername@redwood.wpi.edu` and hit enter key. Then enter your password under instruction. Now you should be able to access redwood successfully and you may change your password using command "yppasswd".
+
+## Cloning the `common` Repository ##
 
 We have a special repository called `common` that contains all of the files you need to set up your environment on `redwood` and get you started in the lab.
 
@@ -70,7 +91,7 @@ You will be asked to enter your password to log into redwood again. This is just
 
 Type `ls` to list the directory. You should now see a folder called `common`. Navigate into that folder using `cd common`. Now with `ls` you should see several folder. One of which is `gettingstarted`. That folder contains this document.
 
-## Set up your environment on redwood ##
+## Set Up Your Environment on Redwood ##
 Navigate to `~/Research/common/dotfiles` and enter the following command at the command prompt `$source link_dotfiles.sh`.
 
 This will place links to the environment setup dotfiles in your home directory. Next time you login you will have the default lab setup.
@@ -79,15 +100,8 @@ This will place links to the environment setup dotfiles in your home directory. 
 Start by updating your personal computer, so that your environment matches or plays nice with Flaherty Lab infrastructure. Here is a list of topics to be covered in this step:
 
 - [Text Editor](#te)
-- [Printer](#p)
 - [Server Map](#sm)
-- [Redwood Connection](#rc)
-- [Linux Command](#lc)
-- [git](#gg)
-- [Default Path](#dp)
-- [Matlab, Python, and C](#MPC)
-- [Gurobi](#Gurobi)
-
+- [Printer](#p)
 
 ##<a name = "te"></a> Text Editor##
 
@@ -97,32 +111,15 @@ The text editor is not only used for contributing to this document, but more imp
 
 Download [MarkdownPad](http://markdownpad.com/), [NotePad++](http://notepad-plus-plus.org/), or [Sublime text](http://www.sublimetext.com/2).
 
-**Mac:**
+If you use Markdown Pad, please read the documents in the Help menu carefully to get familiar witht the syntax. You can start with *Open Welcome Document*, and then read the [*Standard Markdown Syntax*](http://daringfireball.net/projects/markdown/), and *Markdown Extra Syntax*. There is a [cheat sheet](http://warpedvisions.org/projects/markdown-cheat-sheet/) to help you.
 
-Download the program [Textmate](http://macromates.com). 
-
-## Terminal Application ##
-
-**Windows**
-
-X-win32 can be download from campus. Detailed instructions for installing and configuring X-win32 can be found on the [CCC website] (http://www.wpi.edu/Academics/CCC/Help/Software/xwin.html).
-Instructions for X-win32 configuration can be found at <http://www.wpi.edu/Academics/CCC/Help/Software/xwin.html>. However, there are some minor changes in both installation procedures and configuration procedures. 
-
-For installation, most steps lists on ccc website stay the same, but the folder "*X-Win32 9.2*" doesn't exist. Instead of looking for this folder, directly double click on the shortcut "*Install X-Win32 2012 (1178)*". 
-
-This is how you configure it:
-
-1. Click on X-win32 and the configuration window will pop-up.
-2. On the right hand side, click on Wizard, select "ssh" and name it "redwood".
-3. Type in the host name: redwood.wpi.edu.
-4. ONLY type in your login and then click next. This is for security reasons: you always want X-win to prompt you for your password .
-5. Choose linux, click finish, your redwood connection will appear in the initial configuration window.
-6. Now, drag your redwood connection under Autostart folder, click OK.
-7. Click again on X-win32 to get connected to redwood.
+After reading the guides, you should be able to make words bold or italic, make headings, quotes and code blocks, and insert URLs or graphs.
 
 **Mac:**
 
-Terminal is the Mac equivalence of PuTTY. After opening up the Terminal application, type in command `ssh yourusername@redwood.wpi.edu` and hit enter key. Then enter your password under instruction. Now you should be able to access redwood successfully and you may change your password using command "yppasswd".
+Download the program [Textmate](http://macromates.com) or [Mou](http://mouapp.com/). The syntax is similar to that of Markdown.
+
+
 
 ## Mapping research.wpi.edu ##
 Drive mapping is how Microsoft Windows and OS/2 associate a local drive letter (A through Z) with a shared storage area to another computer over a network.
@@ -142,9 +139,6 @@ Please enter your WPI username and password.
 
 You should see a folder with your username. That is the same folder you enter when you log into redwood.wpi.edu. Anything you change in the windows drive will also change in the redwood.wpi.edu environment.
 
-## Git GUI ##
-Having a GUI for git can make your life much easier in the beginning.
-Git for windows: <http://msysgit.github.com/>. After downloading it, install all as default.
 
 ## <a name = "p"></a> Printer ##
 Connect to the printer in the lab.
@@ -160,136 +154,57 @@ Go to the control panel and right click on the printer, then select "Printing Pr
 
 [Here](https://www.wpi.edu/Academics/CCC/Help/Software/Macintosh/macprinting.html) is the guideline on how to add a printer on campus generally. The address of the printer is `p60-biomed3.wpi.edu`.
 
-## <a name = "lc"></a>Linux Commands ##
+#<a name = "lc"></a>Linux Commands #
 
-GENERAL
+`cd`: Change Directory
 
-`cd`: change directory
+`cd ../`: Go to the Directory One Level Above
 
-`cd ../`: get to the directory immediately above the current one
+`cd ../../`: Go to the Directory Two Levels Above
 
-`cd ../..`: get to the one level further above in the directory
+`cd ./`: Current Directory, Where the Command Prompt Is
 
-`cd ./`: the current directory the command prompt is in
+`echo`: Display Text on Screen
 
-`pwd`: Shows where you are in the file system
+`exit`: Exit the Shell
 
-`ls`: Prints out what files are available in the present working directory
+`history`: Shows Commands History
 
-`ls -l`: list in long format and provide more information about all files
+`ls`: Prints out Files Available in the Present Working Directory
 
-`ls -a`: list hidden files as well as the hided files
+`ls -l`: List in Long Format, Provides More Info about All Files
 
-`history`: shows commands history
+`ls -a`: Lists All Files Including the Hidden Ones
 
-`who`: shows who is online
+`man "function/commandname"`: Help Manual
 
-`--help`: Prints the synopsis and a list of the most commonly used commands
+`mkdir`: Create New Directory
 
-More detailed Linux terminal commands: <http://www.cs.utsa.edu/~whaley/teach/intromat/pdf/linux_intro.pdf>
+`pwd`: Print Working Directory
+
+`rm`: Remove File(s)
+
+`who`: Shows All Users Online
+
+`--help`: Prints the Synopsis and a List of the Most Commonly Used Commands
+
 
 We've collected some useful unix tips and tricks here.
 The following is retrieved from <http://mmb.pcb.ub.es/~carlesfe/unix/tricks.txt>.
 
-I have marked with a * those which I think are absolutely essential
-Items for each section are sorted by oldest to newest. Come back soon for more!
-
-BASH
-
-* In bash, 'ctrl-r' searches your command history as you type
-- Add "set -o vi" in your ~/.bashrc to make use the vi keybindings instead
-  of the Emacs ones. Takes some time to get used to, but it's fantastic!
-- Input from the commandline as if it were a file by replacing 
-  'command < file.in' with 'command <<< "some input text"'
-- '^' is a sed-like operator to replace chars from last command 
-  'ls docs; ^docs^web^' is equal to 'ls web'. The second argument can be empty.
-* '!!:n' selects the nth argument of the last command, and '!$' the last arg
-  'ls file1 file2 file3; cat !!:1-2' shows all files and cats only 1 and 2
-- More in-line substitutions: http://tiny.cc/ecv0cw
-- 'nohup ./long_script &' to leave stuff in background even if you logout
-- 'cd -' change to the previous directory you were working on
-- 'ctrl-x ctrl-e' opens an editor to work with long or complex command lines
-* Use traps for cleaning up bash scripts on exit http://tiny.cc/traps
-* 'shopt -s cdspell' automatically fixes your 'cd folder' spelling mistakes
-
-
-PSEUDO ALIASES FOR COMMONLY USED LONG COMMANDS
-
-- function lt() { ls -ltrsa "$@" | tail; }
-- function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
-- function fname() { find . -iname "*$@*"; }
-
-
-VIM
-
-- ':set spell' activates vim spellchecker. Use ']s' and '[s' to move between
-  mistakes, 'zg' adds to the dictionary, 'z=' suggests correctly spelled words
-- check my .vimrc http://tiny.cc/qxzktw and here http://tiny.cc/kzzktw for more
-
-
-TOOLS
-
-* 'htop' instead of 'top'
-- 'ranger' is a nice console file manager for vi fans
-- Use 'apt-file' to see which package provides that file you're missing
-- 'dict' is a commandline dictionary
-- Learn to use 'find' and 'locate' to look for files
-- 'find . -type d -exec chmod g+x {} \;' let people in your group access
-  folders without messing up file permissions (never do 'chmod g+x * -R'!)
-- Compile your own version of 'screen' from the git sources. Most versions
-  have a slow scrolling on a vertical split or even no vertical split at all
-* 'trash-cli' sends files to the trash instead of deleting them forever. 
-  Be very careful with 'rm' or maybe make a wrapper to avoid deleting '*' by
-  accident (e.g. you want to type 'rm tmp*' but type 'rm tmp *')
-- 'file' gives information about a file, as image dimensions or text encoding
-- 'awk '!x[$0]++'' to check for duplicate lines
-- 'echo start_backup.sh | at midnight' starts a command at the specified time
-- Pipe any command over 'column -t' to nicely align the columns
-* Google 'magic sysrq' and learn how to bring you machine back from the dead
-- 'diff --side-by-side fileA.txt fileB.txt | pager' to see a nice diff
-* 'j.py' http://tiny.cc/62qjow remembers your most used folders and is an 
-  incredible substitute to browse directories by name instead of 'cd' 
-- 'dropbox_uploader.sh' http://tiny.cc/o2qjow is a fantastic solution to 
-  upload by commandline via Dropbox's API if you can't use the official client
-- learn to use 'pushd' to save time navigating folders (j.py is better though)
-- if you liked the 'psgrep' alias, check 'pgrep' as it is far more powerful
-
-
-NETWORKING
-
-- SMB is better than NFS. Use 'sshfs_mount' as a last resort, 
-  any network failure will be trouble
-- 'python -m SimpleHTTPServer 8080' shares all the files in the current 
-  folder over HTTP, port 8080
-- 'ssh -R 12345:localhost:22 server.com "sleep 1000; exit"' forwards 
-  server.com's port 12345 to your local ssh port, even if you machine 
-  is not externally visible on the net. 
-  Now you can 'ssh localhost -p 12345' from server.com and you will 
-  log into your machine. 
-  'sleep' avoids getting kicked out from server.com for inactivity
-* Read on 'ssh-keygen' to avoid typing passwords every time you ssh
-- 'socat TCP4-LISTEN:1234,fork TCP4:192.168.1.1:22' forwards your port
-  1234 to another machine's port 22. Very useful for quick NAT redirection.
-* Configure postfix to use your personal Gmail account as SMTP:
-  http://tiny.cc/n5k0cw. Now you can send emails from the command line.
-  'echo "Hello, User!" | mail user@domain.com'
-- Some tools to monitor network connections and bandwith:
-  'lsof -i' monitors network connections in real time
-  'iftop' shows bandwith usage per *connection*
-  'nethogs' shows the bandwith usage per *process*
-* Use this trick on .ssh/config to directly access 'host2' which is on a private 
-  network, and must be accessed by ssh-ing into 'host1' first
-  Host host2
-      ProxyCommand ssh -T host1 'nc %h %p'
-  	  HostName host2
-* Pipe a compressed file over ssh to avoid creating large temporary .tgz files
-  'tar cz folder/ | ssh server "tar xz"'
+[Here](./reference/linux_tutorial.pdf) is another recommended tutorial. You can skip the first part and start reading from Page 6.
 
 Writing good bash scripts can be challenging. Use this [guide](http://www.tldp.org/LDP/abs/html/) to get the basics. And use this [guide](http://www.davidpashley.com/articles/writing-robust-shell-scripts.html) to make your code more robust.
 
-# <a name = "gg"></a> Git: Version Control #
+# <a name = "gg"></a> Version Control: GIT #
 
-Whenever you have made a reasonable amount of contributions to the lab, you should update your work to the main directory. The GIT Graphic User Interface (GUI) is very useful for version control purposes in the lab. You will be able to "pull" data from the repository and "push" your updates to it as well using the GIT GUI. The detailed instructions of "pull" and "push" will be introduced in later parts of this document. 
+We use a version control system git in the lab extensively. The system has a tree structure that bears all the work in the shared drive. Git allows many people to work on the same project at the same time, and avoids the confusion caused by keeping track of the updated versions of the same file. The following paragraph describes the steps for your to complete a job using Git.
+
+At the beginning of your work, you should **clone** a copy of the repository to your local drive and this is your own branch of the central repository. You can edit the files under the copied repository. All work should be saved under the copy of the repository in the end. Here you may **stage (add)** your changes to save it on your own branch, **commit** your changes to make recorded changes to your own branch, and **push** your changes to make recorded changes to the main repository. Also, you would be able to **fetch** from the main repository to see what others have done to the same experiment and **pull** the changes if you feel like merging others' work with yours. All the changes made to the main repository is recorded so that the activities at any time spot can always be undone. 
+
+If there's any collision where you and your teammate have done the same changes to the repository, only the first one who pushes would be able to push and the second push would be denied. Whenever this happens, the second person should first pull from the first person and push again to make other changes. To keep the collision to a minimum, you and your teammate should keep the communication open and distribute the work properly to make sure that you are working accordingly and efficiently on the project. 
+
+The GIT Graphic User Interface (GUI) is very useful and easy to start with software for version control purposes in the lab. The detailed instructions of the commands will be introduced in later parts of this document. 
 
 **Windows:** 
 
@@ -313,31 +228,26 @@ Destination Path: should be somewhere safe.
 
 **Linux:**
 
-We use a version control system called [git](http://git-scm.com) extensively. A good intro is available [here](http://pcottle.github.io/learnGitBranching/).
+However most of the work in the lab is done over command line in linux. A good intro is available [here](http://pcottle.github.io/learnGitBranching/). And here is a good [cheat sheet](http://zrusin.blogspot.com/2007/09/git-cheat-sheet.html) for Git commands.
 
+![Alt text](./figures/git_cheat_sheet.png)
 
-We primarily use [MATLAB](http://www.mathworks.com), [Python](http://www.python.org) and C. Occasionally, you'll need to use another language such as bash shell, but only for very simple tasks that you could probably also do with one of those three. Knowing MATLAB will help you in most engineering jobs and academia. Google considers Python and C two of their core languages.
+###### Commonly Used GIT Commands ##
 
-Some tutorials to learn MATLAB are available [here](http://www.mathworks.com/academia/student_center/tutorials/launchpad.html). Don't buy any books or pay for anything. There are plenty of free resources to learn matlab out there.
+- `git status`: Show the working tree status.
+- `git clone`: Clone the existing project. 
+- `git pull`: Fetch from and merge with another repository or a local branch.
+- `git add`: Add file contents to the index.
+- `git commit`: Record changes to the repository. You can use `git commit -m` and a quoted sentence to discribe what you have done.
+- `git push`: Update remote refs along with associated objects. Only pushed files can be seen by others. Committed files won't be seen by others.
 
-Go through the [Software Carpentry](http://software-carpentry.org) lectures on version control, the shell, python, testing and MATLAB. 
-
-
-## Commonly Used GIT Commands ##
-
-git status: Show the working tree status.
-git pull: Fetch from and merge with another repository or a local branch.
-git push: Update remote refs along with associated objects.
-git commit: Record changes to the repository.
-git add: Add file contents to the index.
-
-## Checking what branches are available ##
+###### Checking what branches are available ##
 
 * `$ git ls-remote` shows all of the branches that are available remotes regardless of whether you're tracking them locally or not.
 * `$ git branch` shows all of the _local_ branches 
 * `$ git branch -r` shows all of the _remote_ branches being tracked
 
-## Switching branches ##
+###### Switching branches ##
 
 Often we want to switch to a different branch that's available on the server.  
 
@@ -347,7 +257,9 @@ Often we want to switch to a different branch that's available on the server.
 	
 3. `git pull <repository> <branch>` Pulls a current branch from the repository. Make sure you don't have any uncommitted changes; if so use the stash. 
 
-## Initializing a shared remote repository ##
+##### More Advanced Commands
+
+###### Initializing a shared remote repository ##
 
 Set up a new _remote_ repository that a group can read/write on the server [Reference](http://kovshenin.com/2011/howto-remote-shared-git-repository/)
 
@@ -369,24 +281,32 @@ Create the following file: project.git/hooks/post-update
 	chgrp -R flahertylab . 2>/dev/null
 
 
-## Linking a local git repository to a remote repository ##
+###### Linking a local git repository to a remote repository ##
 
 1. `$ git init` within the local directory to put it under control
 2. `$ git remote add shortname path_to_remote` where shortname is `research` or `origin` or whatever you want to call it. And `path_to_remote` is a full path to the remote repo.
 3. `$ git push origin master` where origin is the shortname for the remote repo and master is the branch you are on.
 
 
-## Git References ##
+###### Git References ##
 * [Git in 5 Minutes](http://scottr.org/presentations/git-in-5-minutes/)
+* [Version Control with Git - Software Carpentry](http://software-carpentry.org/v5/novice/git/index.html)
 
-## Some Common Git Problems & Solutions ##
+###### Some Common Git Problems & Solutions ##
 
-Sometimes a user will be denied access to a shared repository on redwood. When cloning the repository, include your username in the ssh link as shown below:
-'$ git clone ssh://yourusername@redwood.wpi.edu/research/pjflaherty/flahertylab/git/gettingstarted.git gettingstarted
+1. Sometimes a user will be denied access to a shared repository on redwood. When cloning the repository, include your username in the ssh link as shown below:
+	`$ git clone ssh://yourusername@redwood.wpi.edu/research/pjflaherty/flahertylab/git/gettingstarted.git gettingstarted`
+
+2. The difference between clone and pull.
+	
+	Clone: copy the directory to your local drive/create your own branch (only do once for each project).
+
+	Pull: copy the changes to the repository to your local drive (done multiple times when developing the project, manually controlled by the project manager).
+
+3. Great git Manual Page:
+<http://www.kernel.org/pub/software/scm/git/docs/>
 
 
-Great git Manual Page:
-http://www.kernel.org/pub/software/scm/git/docs/
 
 # Reproducible Experiments #
 
@@ -406,18 +326,39 @@ After following this step, you are expected to be familiar with the following to
 
 ## <a name = "dh"></a> Data Management ##
 
-
 Please follow this procedure when downloading big or important data sets.
 
 1. Download the data and store it in the freezer folder.
 2. Change the permissions for the data to read-only.
-3. Verify or create and verify the MD5 checksum.
-4. Write a README file that contains: who downloaded the data, where they downloaded it from, when the downloaded it, any verison information for the data, the MD5 checksum information.
+3. Create and verify the MD5 checksum using command line. 
+4. Write a README file (.txt) that contains: who downloaded the data, where they downloaded it from, when the downloaded it, any verison information for the data, the MD5 checksum information.
 
-If the data set comes with the MD5 checksum, copy and paste the checksum into a file named `md5.sum` in the top level of the data directory. Otherwise, you'll need to create your own checksum after downloading the data. A good tutorial for creating and verifying checksums is [here](http://klassenresearch.orbs.com/Checksums). Once you have downloaded the data
+To create a checksum, 
+	
+	$ md5sum urfile1.txt urfile2.txt urfile3.txt > md5.sum
+	
+To see the result of the checksum, 
+
+	$ cat md5.sum
+	595f44fec1e92a71d3e9e77456ba80d1  urfile1.txt
+	71f920fa275127a7b60fa4d4d41432a3  urfile2.txt
+	43c191bf6d6c3f263a8cd0efd4a058ab  urfile3.txt
+
+To check the checksum value of all files, 
+
+	$ md5sum -c md5.sum
+	urfile1.txt: OK
+	urfile2.txt: OK
+	urfile3.txt: OK
+
+To check the checksum value of one file, 
+
+	$ echo "595f44fec1e92a71d3e9e77456ba80d1  urfile1.txt" | md5 -c -
+	urfile1.txt: OK
+	
+The algorithm would create a .bam file to keep the checksum value. A tutorial for creating and verifying checksums is [here](http://klassenresearch.orbs.com/Checksums). 
 
 The MD5 algorithm has some vulnerabilities that you can read about on wikipedia. The current standard seems to be SHA2. However, MD5 is implemented on most systems including mac and linux and seems to be good enough for non-critical work.
-
 
 In the Flaherty Lab we have three levels of data, freezer data, fridge data and bench data. 
 
@@ -427,18 +368,7 @@ In a bioinformatics lab these three levels of data meant differently but kept th
 
 ### Freezer ###
 
-The freezer folder, located one level above your personal directory, keeps the primary data you collected or downloaded. They should be kept in the folder once added. Since a little amount of data lost or corruption might influence the future analysis, we need to do a checksum algorithm on the freezer every time new data is added to the folder. 
-
-Follow the following steps when you have primary data to add to the freezer. 
-
-1. Download the data and store it in the freezer folder.
-2. Change the permissions for the data to read-only.
-3. Verify or create and verify the MD5 checksum.
-4. Write a README file that contains: who downloaded the data, where they downloaded it from, when they downloaded it, any version information for the data, the MD5 checksum information.
-
-If the data set comes with the MD5 checksum, copy and paste the checksum into a file named `md5.sum` in the top level of the data directory. Otherwise, you'll need to create your own checksum after downloading the data. A good tutorial for creating and verifying checksums is [here](http://klassenresearch.orbs.com/Checksums).
-
-The MD5 algorithm has some vulnerabilities that you can read about on wikipedia. The current standard seems to be SHA2. However, MD5 is implemented on most systems including mac and linux and seems to be good enough for non-critical work.
+The freezer folder, located one level above your personal directory, keeps the primary data you collected or downloaded. They should be kept in the folder once added. Since a little amount of data lost or corruption might influence the future analysis, we need to do the checksum algorithm mentioned above every time new data is added to the folder. 
 
 ### Fridge ###
 
@@ -448,17 +378,54 @@ The fridge contains the secondary data, which you have modified for the purpose 
 
 The bench data should be the result you get after running the data in the program you wrote. However here in the repository we only record the code you wrote to run the fridge data and the collective result you get (figures, tables, etc) since the data itself would be too big to store. However with the code that is stored here, your data result would be reproducible. 
 
+---------
 ##<a name = "spf"></a> Structure of a Project Folder ##
 
 In the lab we have a standard way of organizing the experiment notes, data and resources so that your work is clear to everyone in the lab and helpful when compositing a research paper. 
 
 First of all, you need to go inside your personal folder named with your WPI usename. Inside of that folder, create another new folder named "Research". Inside of the "Research" folder, you can create folders for all the different projects of yours. 
 
-For each project, there are several folders you need to keep various forms of data. 
+For each project, there are several folders you need to keep various forms of data. An example of this can be found here.
+
+![Alt text](./figures/structure.png)
 
 ### <a name = "fridge"> </a> data (Fridge)
 
-The fridge keeps the secondary data, which is the modified primary data specific to your project. It can be normalized, statistically analyzed, or In order to make each branch of yours smaller, we are not keeping Gigabytes of modified data in the fridge. Instead you should MakeFile the code you wrote to analyze the primary data so that the program can always run by others, and the branch is smaller in the mean time. 
+The fridge keeps the secondary data, which is the modified primary data specific to your project. It can be normalized, statistically analyzed, or In order to make each branch of yours smaller, we are not keeping Gigabytes of modified data in the fridge. Instead you should create a Makefile which contains the code you wrote to analyze the primary data so that the program can always run by others, and the branch is smaller in the mean time. 
+
+**Notes on Makefile**
+
+Makefile is a file describing the relationship (most of the times computational) among data files and providing commands for developing and updating data files. It is derived from the C recompiler yet has nothing to do with the source code in this lab. 
+
+Makefile is a series of commandline code and the general format of a Makefile command is: 
+
+	target:dependent(s)
+	[tab]rules
+
+Target is the output file you want as a result, dependent(s) are the files you need to create the target, and the rules include the relationship and the transformative commands between the target and the dependent. According to the rule of reproducible programming, the commands should be pre-written executable code. 
+
+For instance, in your experiment you would like to create a `depthchart` file with a `pileup` file. The `pileup` file is created from the `bai` file, and the `bai` file is generated from the `bam` file stored in the freezer. Your Makefile command would look like this: 
+
+	yourfile.dc : yourfile.pileup
+		pileup2dc yourfile.pileup > yourfile.dc
+	yourfile.pileup : yourfile.bam
+		samtools ipileup yourfile.bam -o yourfile.pileup
+	yourfile.bam : yourfile.sam
+		samtools view -b -S -o yourfile.bam
+
+`pileup2dc`, `samtools mpileup` and `samtools view` are pre-written executable functions.
+
+The order of the command matters since the first file name it encounters, i.e. `yourfile.dc` in the example above, is treated as the final output file of the command. However if you have a complcated mapping of file type transformation, you can write 
+
+	all : yourfile.dc
+	
+in the beginning or 
+
+	clean : 
+		rm yourfile.dc yourfile.pileup yourfile.bam
+	
+at the end of your commad so that the `all` file or the file that is not cleaned is recognized as the final output file type. 
+
 
 ### docs
 
@@ -468,22 +435,22 @@ The Docs folder keeps the documents needed to construct the final paper. The fir
 
 The results folder is the most detailed and important one of all folders (although every one of them is quintessential). All the subfolders in the "Results" folder are experiments you did for this project. They should be named precisely as *YYYY-MM-DD_Project Name* so that the computer may sort the experiments according to their start date. Inside of each experiment folder, you should keep a notebook, which is a markdown file containing the purpose, the materials and methods, the results and the conclusion of the experiment. The markdown file should be written using your text editor installed above and it will be the primary source of your research paper. Also, all the Matlab, python, R and any other assisting code files should be saved alongside the notes as well.
 
-#### src (source)
+### src (source)
 
 The source folder contains all the combined code you write for the experiment. Inside of the result might be pieces of small functions you write to run one specific step of the experiment, while in the source folder you should keep versions of the complete program.
 
-#### bin
+### bin
 
 The bin folder contains all the executable files. They might be programs you find online that are helpful to the experiment, or they are compiled programs that you can execute with one command when programming. The folder is important for reproducible programming. 
 
 
-
+--------
 ##<a name = "sff"></a> Standard File Formats
 You will often be reading and writing data and results files. In order to standardize the interface between apps that we write we use some standard file formats for data management.
 
 **Use HDF5 or CSV formats for data and models.** MATLAB *.mat files are HDF5 format. Python has libraries (pytables, h5py) to read/write HDF5.
 
-**Use markdown for documentation and notebook files.**  There is a [syntax guide](http://daringfireball.net/projects/markdown/) and a [cheat sheet](http://warpedvisions.org/projects/markdown-cheat-sheet/) to help you.
+**Use Markdown for documentation and notebook files.**  
 
 **Use eps for figures**
 
@@ -491,17 +458,36 @@ You will often be reading and writing data and results files. In order to standa
 
 -----
 
+
+## <a name = "ps"></a> Programming Style ##
+We use functional programming for the majority of projects in the lab and we use object-oriented programming only where it really makes sense.
+
+Pure functions have meet two criteria:
+
+1. *Referential Transparency* - They always return the _same result_ given the _same arguments_.
+2. *No side-effects* - They don't change the external world by changing external objects or interacting with i/o channels.
+
+Most of your code will fall into the pure function category and you can keep things orderly by following a few guidelines for the exceptions.
+
+- If your function does interact with some i/o channel make sure that is the only thing your function does. Don't write a function that does some computation then writes the output to a file. Refactor to separate functions; one that computes and one that saves. Think of the "print" function here.'
+- Do your best to avoid global variables. This is not always possible, but should be absolutely minimized.
+- GOTO is ok. Have a look at Don Knuth's [Structured Programming with go to statements](http://cs.sjsu.edu/~mak/CS185C/KnuthStructuredProgrammingGoTo.pdf). There are really good examples of how it massively clarifies initialization of very common algorithm paradigms. "break", "return" and "continue" commands in C and python accomplishes a goto-like behavior. "exceptions" do a similar thing in higher level programs like python as well.
+
 # Software #
 
 We primarily use [MATLAB](http://www.mathworks.com), [Python](http://www.python.org) and C. Occasionally, you'll need to use another language such as bash shell, but only for very simple tasks that you could probably also do with one of those three. Knowing MATLAB will help you in most engineering jobs and academia. Google considers Python and C two of their core languages.
 
-## Matlab ##
+- [Matlab](#mt)
+- [Python](#py)
+- [Gurobi](#grb)
+
+## <a name = "mt"> </a> Matlab ##
 
 Some tutorials to learn MATLAB are available [here](http://www.mathworks.com/academia/student_center/tutorials/launchpad.html). Don't buy any books or pay for anything. There are plenty of free resources to learn matlab out there.
 
 Go through the [Software Carpentry](http://software-carpentry.org) lectures on version control, the shell, python, testing and MATLAB.
 
-## Python ##
+## <a name = "py"> </a>Python ##
 Learn about testing using the [nose](http://nbviewer.ipython.org/github/swcarpentry/2012-11-scripps/blob/master/python/testing-with-nose.ipynb) framework.  Learn about sharing results using [ipython](http://ipython.org) notebooks. Learn about virtual environments
 
 ### Essential Python Toolboxes ###
@@ -520,7 +506,6 @@ These are core modules and should always be available.
 - [cloud](http://www.picloud.com) - access to PiCloud's cloud-computing platform
 - [unittest](http://docs.python.org/2/library/unittest.html) - unit testing framework
 
-The CrossCompute Amazon Machine Image (AMI) has an ipython notebook server with: numpy, scipy, h5py, pytables, matplotlib, pyramid, scikit-learn, pandas, statsmodels, networkx, theano, gdal, pysal, shapely. You need to launch a High-CPU Medium Instance to use it. The on-demand price is $0.145 per worker per hour and the spot instance price is $0.018 per worker per hour.
 
 ### Machine-Learning & Statistics Modules ###
 - [scikits.image]
@@ -563,7 +548,7 @@ The CrossCompute Amazon Machine Image (AMI) has an ipython notebook server with:
 - [tornado]
 - [Twisted]
 
-## <a name = "Gurobi"> </a> Gurobi ##
+## <a name = "grb"> </a> Gurobi ##
 
 Gurobi is an optimizer we use in the lab for mathematical programming. It is compatible with multiple programming interface including python.
 
@@ -593,49 +578,57 @@ Here's what you need to do to get this fixed on Mac OS 10.8 (with Xcode installe
 
 Step 3 needs to be repeated every time Gurobi is updated to a new version (until the issue is fixed of course).
 
-## <a name = "ps"></a> Programming Style ##
-We use functional programming for the majority of projects in the lab and we use object-oriented programming only where it really makes sense.
+# Other Servers
 
-Pure functions have meet two criteria:
+### Amazon Machine Image (AMI) ###
 
-1. *Referential Transparency* - They always return the _same result_ given the _same arguments_.
-2. *No side-effects* - They don't change the external world by changing external objects or interacting with i/o channels.
+You might have large amount of calculations to be done for your experiment. If the calculation requires 64 core server, the redwood server can handle it. However if it requires more, the processing time would be a lot longer if the work is done on redwood. Here we distribute the work to Amazon, which provides an amazing service "Amazon Machine Image" to do the calculation for us. The CrossCompute Amazon Machine Image has an iPython(interactive parallel computing in Python) notebook server with: numpy, scipy, h5py, pytables, matplotlib, pyramid, scikit-learn, pandas, statsmodels, networkx, theano, gdal, pysal, shapely. You need to launch a High-CPU Medium Instance to use it. The on-demand price is $0.145 per worker per hour and the spot instance price is $0.018 per worker per hour. The user's guide can be found [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html).
 
-Most of your code will fall into the pure function category and you can keep things orderly by following a few guidelines for the exceptions.
+#### STAR Cluster ####
 
-- If your function does interact with some i/o channel make sure that is the only thing your function does. Don't write a function that does some computation then writes the output to a file. Refactor to separate functions; one that computes and one that saves. Think of the "print" function here.'
-- Do your best to avoid global variables. This is not always possible, but should be absolutely minimized.
-- GOTO is ok. Have a look at Don Knuth's [Structured Programming with go to statements](http://cs.sjsu.edu/~mak/CS185C/KnuthStructuredProgrammingGoTo.pdf). There are really good examples of how it massively clarifies initialization of very common algorithm paradigms. "break", "return" and "continue" commands in C and python accomplishes a goto-like behavior. "exceptions" do a similar thing in higher level programs like python as well.
+Although we usually use the iPython notebook to distribute our work, there are other toolkit to simplify the process of building, configuring, and managing clusters of virtual machines on Amazon’s Elastic Compute Cloud. It is designed by MIT and can be found [here](http://star.mit.edu/cluster/) as an open source cluster-computing toolkit. 
 
+#### Message Passing Interface (MPI) ####
 
-<a name = "app"> </a> Appendix
--------
+MPI is a language-indeendent communications protocol used to program parallel computers. Both point-to-point and collective communication are supported. The MPI Python implementations include: pyMPI, mpi4py, pypar, MYMPI, and the MPI submodule in Scientific Python. [Here](http://www.mcs.anl.gov/research/projects/mpi/tutorial/index.html) you may find some tutorials and exercises to MPI. 
 
-### Recommended Reading
+#<a name = "app"> </a> Appendix #
+
+## Recommended Reading
 
 There are a few good background books on research, bioinformatics and machine learning that will help you become a productive member of the lab. These are organized more by topic and rating. 
 (xxx) = essential
 (xx) = recommended
 (x) = useful
 
+We primarily use [MATLAB](http://www.mathworks.com), [Python](http://www.python.org) and C. Occasionally, you'll need to use another language such as bash shell, but only for very simple tasks that you could probably also do with one of those three. Knowing MATLAB will help you in most engineering jobs and academia. Google considers Python and C two of their core languages.
+
+Some tutorials to learn MATLAB are available [here](http://www.mathworks.com/academia/student_center/tutorials/launchpad.html). Don't buy any books or pay for anything. There are plenty of free resources to learn matlab out there.
+
+Go through the [Software Carpentry](http://software-carpentry.org) lectures on [version control](http://software-carpentry.org/lessons.html), the shell, python, testing and MATLAB. 
+
 **To Be Developed**
 
-### Courses
+## Courses
 
 https://www.coursera.org/course/matrix
 
-### Software Engineering and Programming
+## Software Engineering and Programming
 
 [The Practice of Programming by Kernighan and Pike](http://cm.bell-labs.com/cm/cs/tpop/)(xxx)
 
 Try out a few sample bioinformatics problems to build your programming skills and thinking about bioinformatics problems. 
  * [Rosalind](http://rosalind.info)
 
-### Passing Your Qualifying Exam
+## Plants in the Lab
+
+There are two plants in the lab. Everyone in the lab is responsible of taking care of them, including regular watering and sunbathing. :)
+
+## Passing Your Qualifying Exam
 
 You'll be asked question throughout your exam. A good way to answer a question you don't immediately know the answer to is: "We’ll see. We'll do X experiment. We have to look at the data and see if X is _____. If so, we’ll do _____, if not, we’ll do _______."
 
-#### Tips
+### Tips
 
 Should be 2min maximum. Sets up ethos; speaker will handle pathos and logos.
 Don't say: "As everyone knows." - they don't.
@@ -663,3 +656,11 @@ Don't say: "As everyone knows." - they don't.
 # Unfinished Business
 
 We can also create our own virtual machine loaded with enthought and other stack options. Anyone want to take the initiative on this?
+
+TODO: reorganize the freezer as described in the gettingstarted file
+
+Things to do for the Getting Started File: 
+
+1. clean up the file to make it flow under the changes$ 
+7. recommended reading?$$
+8. What do we do with common code?
