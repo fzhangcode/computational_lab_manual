@@ -6,14 +6,14 @@
 \usecolortheme{rose}
 
 \title[Bioinformatics Workshop]{Getting Started in the Flaherty Lab}
-\author[T. Zhang]{Tete Zhang}
+\author[T. Zhang]{Patrick Flaherty}
 \institute[WPI]{
-    Department of Bioinformatics and Computational Biology\\
+    Department of Biomedical Engineering\\
     Worcester Polytechnic Institute\\
     Worcester, MA 01609\\[1ex]
-    \texttt{tzhang3@wpi.edu}
+    \texttt{pjflaherty@wpi.edu}
 }
-\date[May 2014]{May 29, 2014}
+\date[June 2014]{June 2, 2014}
 
 \begin{document}
 
@@ -48,17 +48,16 @@
      
     	\begin{textblock}{8}(7.3,3)
     		\visible<1->{
-      		\textbf{Data Fridge}
+      		\textbf{Data Fridge}}
       		
       		\begin{itemize}
-		\item{Makefile}
-		\item{target:dependent
+		\item{\visible<2->{Makefile}}
+		\item{\visible<3->{target:dependent
 		
-			[tab] rules}
-		\item{\includegraphics[width=2.5in, height=1in]{makefile.png}}
+			[tab] rules}}
+		\item{\visible<4->{\includegraphics[width=2.5in, height=1in]{makefile.png}}}
 		\end{itemize}
 		
-                  }
 	\end{textblock}
               
      \end{column}
@@ -93,9 +92,9 @@
 \begin{frame}{Getting Started in the Flaherty Lab}
 \LARGE\textbf{Version Control}
 	\begin{itemize}
-  \item\LARGE Why Version Control?
-  \item\LARGE What are the options for Version Control?
-  \item\LARGE Why GIT?
+  \item\LARGE \visible<2->{Why Version Control?}
+  \item\LARGE \visible<3->{What are the options for Version Control?}
+  \item\LARGE \visible<4->{Why GIT?}
 	\end{itemize}
 \end{frame}
 
@@ -117,9 +116,9 @@
 %--- Flaherty Lab background ---
 \begin{frame}{Flaherty Lab Environment}
           \begin{itemize}
-  \item\LARGE Redwood Server
-  \item\LARGE Amazon Machine Image
-  \item\LARGE Starcluster? MPI? What else?
+  \item\LARGE \visible<2->{Redwood Server}
+  \item\LARGE \visible<3->{Amazon Machine Image}
+  \item\LARGE \visible<4->{Starcluster? MPI? What else?}
 	\end{itemize}
 \end{frame}
 
@@ -135,9 +134,9 @@
 %--- AMI ---
 \begin{frame}{Flaherty Lab Environment - Amazon Machine Image (AMI)}
           \begin{itemize}
-  \item\LARGE{When you need more than 64 cores for calculation..}
-  \item\LARGE{numpy, scipy, h5py, pytables, matplotlib, pyramid, scikit-learn, pandas, statsmodels, networkx, theano, gdal, pysal, and shapely}
-  \item\LARGE{on-demand price: 0.145 dollar per worker per hour
+  \item\LARGE\visible<1->{When you need more than 64 cores for calculation..}
+  \item\LARGE\visible<2->{numpy, scipy, h5py, pytables, matplotlib, pyramid, scikit-learn, pandas, statsmodels, networkx, theano, gdal, pysal, and shapely}
+  \item\LARGE\visible<2->{on-demand price: 0.145 dollar per worker per hour
   
   spot instance price: 0.018 dollar per worker per hour}
 	 \end{itemize}
