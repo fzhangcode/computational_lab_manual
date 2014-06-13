@@ -2,11 +2,11 @@ Title:			Getting Started in Flaherty Lab
 Subtitle:		Handbook for New Members
 Author:			Yifan Zhao (2014), Tete Zhang (2014), Yuting He, Fan Zhang, Tim DeFreitas, Spencer Keilich, Hachem Saddiki, Patrick Flaherty  
 Affiliation:	Worcester Polytechnic Institute
-Date:			May 28, 2014  
+Date:			June 03, 2014  
 Copyright:		
 Keywords:		
 
-Last update: May 14, 2014
+Last update: June 03, 2014
 
 
 # Your First Day #
@@ -23,7 +23,7 @@ There are a few things you need to do to get started.
 
 Once you've set up your environment on redwood, then you'll need to start learning about the software, systems and culture for the lab. Read on...
 
-## <a name = "serversetup"></a>Requesting Access to `redwood.wpi.edu`  ##
+## <a name = "serversetup"></a>Requesting Access to redwood.wpi.edu  ##
 `redwood.wpi.edu` is our primary linux server for computation. It's a 64 core machine with 256Gb RAM. In addition to onboard storage, we have a 9Tb high speed drive +1Tb solid-state drive attached to redwood via NFS for storing our data. 
 
 1. Ask Prof. Flaherty to add you to the flahertylab group through CCC. The webpage to do that is [here](http://www.wpi.edu/+gred).
@@ -111,7 +111,7 @@ The text editor is not only used for contributing to this document, but more imp
 
 Download [MarkdownPad](http://markdownpad.com/), [NotePad++](http://notepad-plus-plus.org/), or [Sublime text](http://www.sublimetext.com/2).
 
-If you use Markdown Pad, please read the documents in the Help menu carefully to get familiar witht the syntax. You can start with *Open Welcome Document*, and then read the [*Standard Markdown Syntax*](http://daringfireball.net/projects/markdown/), and *Markdown Extra Syntax*. There is a [cheat sheet](http://warpedvisions.org/projects/markdown-cheat-sheet/) to help you.
+If you use Markdown Pad, please read the documents in the Help menu carefully to get familiar with the syntax. You can start with *Open Welcome Document*, and then read the [*Standard Markdown Syntax*](http://daringfireball.net/projects/markdown/), and *Markdown Extra Syntax*. There is a [cheat sheet](http://warpedvisions.org/projects/markdown-cheat-sheet/) to help you.
 
 After reading the guides, you should be able to make words bold or italic, make headings, quotes and code blocks, and insert URLs or graphs.
 
@@ -152,15 +152,15 @@ Go to the control panel and right click on the printer, then select "Printing Pr
 
 **Mac:**
 
-[Here](https://www.wpi.edu/Academics/CCC/Help/Software/Macintosh/macprinting.html) is the guideline on how to add a printer on campus generally. The address of the printer is `p60-biomed3.wpi.edu`.
+[Here](http://www.wpi.edu/Academics/CCC/Help/Software/Macintosh/ricoh.html) is the guideline on how to add a printer on campus generally. The address of the printer is `p60-biomed3.wpi.edu`. The user code should be assigned by Professor Flaherty. 
 
 #<a name = "lc"></a>Linux Commands #
 
-`cd`: Change Directory
+`cd`: Go to the Directory Above
 
-`cd ../`: Go to the Directory One Level Above
+`cd ../`: Go to the Directory One Level Below
 
-`cd ../../`: Go to the Directory Two Levels Above
+`cd ../../`: Go to the Directory Two Levels Below
 
 `cd ./`: Current Directory, Where the Command Prompt Is
 
@@ -178,7 +178,7 @@ Go to the control panel and right click on the printer, then select "Printing Pr
 
 `man "function/commandname"`: Help Manual
 
-`mkdir`: Create New Directory
+`mkdir`: Make New Directory
 
 `pwd`: Print Working Directory
 
@@ -212,7 +212,7 @@ You can either download [Git for Windows](http://msysgit.github.com/) or [Source
 
 The configuration steps below are for SourceTree. After downloading it, install all as default.
 
-Click Clone/New -> clone repository ->Source: `ssh://username@redwood.wpi.edu/home/pjflaherty/flahertylab/git/common.git`
+Click Clone/New -> clone repository ->Source: `ssh://username@redwood.wpi.edu/home/pjflaherty/flahertylab/git/projectfoldername.git`
 
 You need to enter your password for this.
 
@@ -225,7 +225,7 @@ Clone Type: Standard.
 <http://www.sourcetreeapp.com>.
 
 Run Source Tree -> Clone Repository ->
-Source Path:`ssh://username@redwood.wpi.edu/home/pjflaherty/flahertylab/git/common.git`
+Source Path:`ssh://username@redwood.wpi.edu/home/pjflaherty/flahertylab/git/projectfoldername.git`
 
 Destination Path: should be somewhere safe. 
 
@@ -239,12 +239,12 @@ However most of the work in the lab is done over command line in linux. A good i
 
 ###### Commonly Used GIT Commands ##
 
-- `git status`: Show the working tree status.
-- `git clone`: Clone the existing project. 
-- `git pull`: Fetch from and merge with another repository or a local branch.
-- `git add`: Add file contents to the index.
-- `git commit`: Record changes to the repository. You can use `git commit -m` and a quoted sentence to discribe what you have done.
-- `git push`: Update remote refs along with associated objects. Only pushed files can be seen by others. Committed files won't be seen by others.
+- `$ git status`: Show the working tree status.
+- `$ git clone`: Clone the existing project. 
+- `$ git pull`: Fetch from and merge with another repository or a local branch.
+- `$ git add`: Add file contents to the index.
+- `$ git commit`: Record changes to the repository. You can use `git commit -m` and a quoted sentence to describe what you have done.
+- `$ git push`: Update remote refs along with associated objects. Only pushed files can be seen by others. Committed files won't be seen by others.
 
 ###### Checking what branches are available ##
 
@@ -260,7 +260,7 @@ Often we want to switch to a different branch that's available on the server.
 	
 2. `$ git ls-remote <repository>` Shows the branches that are available on that repository that you can pull from. It's best to pull a branch that is also a head. You can isolate those using `$ git ls-remote --heads <repository>`.  
 	
-3. `git pull <repository> <branch>` Pulls a current branch from the repository. Make sure you don't have any uncommitted changes; if so use the stash. 
+3. `$ git pull <repository> <branch>` Pulls a current branch from the repository. Make sure you don't have any uncommitted changes; if so use the stash. 
 
 ##### More Advanced Commands
 
@@ -300,7 +300,8 @@ Create the following file: project.git/hooks/post-update
 ###### Some Common Git Problems & Solutions ##
 
 1. Sometimes a user will be denied access to a shared repository on redwood. When cloning the repository, include your username in the ssh link as shown below:
-	`$ git clone ssh://yourusername@redwood.wpi.edu/research/pjflaherty/flahertylab/git/gettingstarted.git gettingstarted`
+
+	`$ git clone ssh://yourusername@redwood.wpi.edu/research/pjflaherty/flahertylab/git/common.git `
 
 2. The difference between clone and pull.
 	
@@ -311,7 +312,13 @@ Create the following file: project.git/hooks/post-update
 3. Great git Manual Page:
 <http://www.kernel.org/pub/software/scm/git/docs/>
 
+###### GIT Flow in Flaherty Lab ##
 
+You might have read about the git repository structure of a game design company. However the structure can be different according to the types of work we do and the Flaherty Lab has its own GIT flow. 
+
+![Alt text](./figures/GIT_flow.jpg)
+
+According to the picture, we can see that we open a new repository for each project and create a master repository for it. Under that we have the develop branch where most of the work are kept. Under the develop branch we may branch out for various features/experiments of the project, and even smaller ones for individual work. After a good amount and quality of code is written, we may push it back to the develop branch. And when the project is developed enough to write a paper, we would push it to release with all the paper writing components. 
 
 # Reproducible Experiments #
 
@@ -336,7 +343,7 @@ Please follow this procedure when downloading big or important data sets.
 1. Download the data and store it in the freezer folder.
 2. Change the permissions for the data to read-only.
 3. Create and verify the MD5 checksum using command line. 
-4. Write a README file (.txt) that contains: who downloaded the data, where they downloaded it from, when the downloaded it, any verison information for the data, the MD5 checksum information.
+4. Write a README file (.txt) that contains: who downloaded the data, where they downloaded it from, when the downloaded it, any version information for the data, the MD5 checksum information.
 
 To create a checksum, 
 	
@@ -388,7 +395,7 @@ The bench data should be the result you get after running the data in the progra
 
 In the lab we have a standard way of organizing the experiment notes, data and resources so that your work is clear to everyone in the lab and helpful when compositing a research paper. 
 
-First of all, you need to go inside your personal folder named with your WPI usename. Inside of that folder, create another new folder named "Research". Inside of the "Research" folder, you can create folders for all the different projects of yours. 
+First of all, you need to go inside your personal folder named with your WPI username. Inside of that folder, create another new folder named "Research". Inside of the "Research" folder, you can create folders for all the different projects of yours. 
 
 For each project, there are several folders you need to keep various forms of data. An example of this can be found here.
 
@@ -484,7 +491,9 @@ We primarily use [MATLAB](http://www.mathworks.com), [Python](http://www.python.
 
 - [Matlab](#mt)
 - [Python](#py)
+- [LaTeX](#latex)
 - [Gurobi](#grb)
+- [IGV](#igv)
 
 ## <a name = "mt"> </a> Matlab ##
 
@@ -492,7 +501,7 @@ Some tutorials to learn MATLAB are available [here](http://www.mathworks.com/aca
 
 Go through the [Software Carpentry](http://software-carpentry.org) lectures on version control, the shell, python, testing and MATLAB.
 
-## <a name = "py"> </a>Python ##
+## <a name = "py"> </a> Python ##
 Learn about testing using the [nose](http://nbviewer.ipython.org/github/swcarpentry/2012-11-scripps/blob/master/python/testing-with-nose.ipynb) framework.  Learn about sharing results using [ipython](http://ipython.org) notebooks. Learn about virtual environments
 
 ### Essential Python Toolboxes ###
@@ -553,6 +562,14 @@ These are core modules and should always be available.
 - [tornado]
 - [Twisted]
 
+## <a name = "igv"></a> IGV ##
+
+The Interactive Genomic Viewer is a high performance visualization tool for interactive exploration of large, integrated genomic datasets. It supports a wide variety of data types, including array-based and next generation sequence data, and genomic annotations. You may get the latest version of IGV [here](http://www.broadinstitute.org/software/igv/download), and read about how to use the software [here](http://www.broadinstitute.org/software/igv/UserGuide).
+
+## <a name = "latex"> </a> LaTeX ##
+
+LaTeX is a document preparation system and a high quality typesetting system that is designed for scientific and technical documentation. It is a programming system with simple syntax but great text format. Also, the beamer package embedded in LaTeX allows us to create presentations which are compatible to the git version control system. A simple introduction to LaTeX documentation can be found [here](http://www.latex-project.org/) and an introduction to LaTeX Beamer can be found [here](http://en.wikibooks.org/wiki/LaTeX/Presentations). If you would like to learn specific how-tos, you may go on to [TeX forum](http://tex.stackexchange.com/) or simply google to see how others have solved similar problems. 
+
 ## <a name = "grb"> </a> Gurobi ##
 
 Gurobi is an optimizer we use in the lab for mathematical programming. It is compatible with multiple programming interface including python.
@@ -583,7 +600,7 @@ Here's what you need to do to get this fixed on Mac OS 10.8 (with Xcode installe
 
 Step 3 needs to be repeated every time Gurobi is updated to a new version (until the issue is fixed of course).
 
-# Other Servers
+# Other Servers #
 
 ### Amazon Machine Image (AMI) ###
 
@@ -599,7 +616,7 @@ MPI is a language-indeendent communications protocol used to program parallel co
 
 #<a name = "app"> </a> Appendix #
 
-## Recommended Reading
+## Recommended Reading ##
 
 There are a few good background books on research, bioinformatics and machine learning that will help you become a productive member of the lab. These are organized more by topic and rating. 
 (xxx) = essential
@@ -610,30 +627,28 @@ We primarily use [MATLAB](http://www.mathworks.com), [Python](http://www.python.
 
 Some tutorials to learn MATLAB are available [here](http://www.mathworks.com/academia/student_center/tutorials/launchpad.html). Don't buy any books or pay for anything. There are plenty of free resources to learn matlab out there.
 
-Go through the [Software Carpentry](http://software-carpentry.org) lectures on [version control](http://software-carpentry.org/lessons.html), the shell, python, testing and MATLAB. 
+Go through the [Software Carpentry](http://software-carpentry.org) lectures on [version control](http://software-carpentry.org/lessons.html) (xxx), the shell, python, testing and MATLAB. 
 
 **To Be Developed**
 
-## Courses
+Check out the [Brown University course] (https://www.coursera.org/course/matrix) on Computer Science Application of Linear Algebra. 
 
-https://www.coursera.org/course/matrix
-
-## Software Engineering and Programming
+## Software Engineering and Programming ##
 
 [The Practice of Programming by Kernighan and Pike](http://cm.bell-labs.com/cm/cs/tpop/)(xxx)
 
 Try out a few sample bioinformatics problems to build your programming skills and thinking about bioinformatics problems. 
  * [Rosalind](http://rosalind.info)
 
-## Plants in the Lab
+## Plants in the Lab ##
 
 There are two plants in the lab. Everyone in the lab is responsible of taking care of them, including regular watering and sunbathing. :)
 
-## Passing Your Qualifying Exam
+## Passing Your Qualifying Exam ##
 
 You'll be asked question throughout your exam. A good way to answer a question you don't immediately know the answer to is: "We’ll see. We'll do X experiment. We have to look at the data and see if X is _____. If so, we’ll do _____, if not, we’ll do _______."
 
-### Tips
+### Tips ###
 
 Should be 2min maximum. Sets up ethos; speaker will handle pathos and logos.
 Don't say: "As everyone knows." - they don't.
@@ -658,7 +673,7 @@ Don't say: "As everyone knows." - they don't.
 
  [1] Some of the ideas and structure for this document are from the Valve: Handbook for New Employees.
 
-# Unfinished Business
+# Unfinished Business #
 
 We can also create our own virtual machine loaded with enthought and other stack options. Anyone want to take the initiative on this?
 

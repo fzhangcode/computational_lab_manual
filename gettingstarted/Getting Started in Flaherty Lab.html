@@ -1,450 +1,484 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<style>
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote {
-    margin: 0;
-    padding: 0;
+<title>Getting Started in Flaherty Lab</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
+
+/* BODY
+=============================================================================*/
+
 body {
-    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-    color: #737373;
-    background-color: white;
-    margin: 10px 13px 10px 13px;
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
 }
-table {
-	margin: 10px 0 15px 0;
-	border-collapse: collapse;
+
+body>*:first-child {
+  margin-top: 0 !important;
 }
-td,th {	
-	border: 1px solid #ddd;
-	padding: 3px 10px;
+
+body>*:last-child {
+  margin-bottom: 0 !important;
 }
-th {
-	padding: 5px 10px;	
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
 }
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
 
 a {
-    color: #0069d6;
+  color: #4183C4;
+  text-decoration: none;
 }
+
 a:hover {
-    color: #0050a3;
-    text-decoration: none;
+  text-decoration: underline;
 }
-a img {
-    border: none;
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
 }
-p {
-    margin-bottom: 9px;
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #404040;
-    line-height: 36px;
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
 }
-h1 {
-    margin-bottom: 18px;
-    font-size: 30px;
+
+dl {
+  padding: 0;
 }
-h2 {
-    font-size: 24px;
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
 }
-h3 {
-    font-size: 18px;
+
+dl dt:first-child {
+  padding: 0;
 }
-h4 {
-    font-size: 16px;
+
+dl dt>:first-child {
+  margin-top: 0px;
 }
-h5 {
-    font-size: 14px;
+
+dl dt>:last-child {
+  margin-bottom: 0px;
 }
-h6 {
-    font-size: 13px;
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
 }
-hr {
-    margin: 0 0 19px;
-    border: 0;
-    border-bottom: 1px solid #ccc;
+
+dl dd>:first-child {
+  margin-top: 0px;
 }
-blockquote {
-    padding: 13px 13px 21px 15px;
-    margin-bottom: 18px;
-    font-family:georgia,serif;
-    font-style: italic;
+
+dl dd>:last-child {
+  margin-bottom: 0px;
 }
-blockquote:before {
-    content:"\201C";
-    font-size:40px;
-    margin-left:-10px;
-    font-family:georgia,serif;
-    color:#eee;
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
 }
-blockquote p {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 18px;
-    margin-bottom: 0;
-    font-style: italic;
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
 }
-code, pre {
-    font-family: Monaco, Andale Mono, Courier New, monospace;
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
 }
-code {
-    background-color: #fee9cc;
-    color: rgba(0, 0, 0, 0.75);
-    padding: 1px 3px;
-    font-size: 12px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
+
 pre {
-    display: block;
-    padding: 14px;
-    margin: 0 0 18px;
-    line-height: 16px;
-    font-size: 11px;
-    border: 1px solid #d9d9d9;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
 }
-pre code {
-    background-color: #fff;
-    color:#737373;
-    font-size: 11px;
-    padding: 0;
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
 }
-sup {
-    font-size: 0.83em;
-    vertical-align: super;
-    line-height: 0;
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
 }
-* {
-	-webkit-print-color-adjust: exact;
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
 }
-@media screen and (min-width: 914px) {
-    body {
-        width: 854px;
-        margin:10px auto;
-    }
+
+blockquote>:first-child {
+  margin-top: 0px;
 }
-@media print {
-	body,code,pre code,h1,h2,h3,h4,h5,h6 {
-		color: black;
-	}
-	table, pre {
-		page-break-inside: avoid;
-	}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
 }
 </style>
-<title>Your First Day</title>
-
 </head>
 <body>
-<p>Title:          Getting Started in Flaherty Lab
-Subtitle:       Handbook for New Members
-Author:         Yifan Zhao (2014), Tete Zhang (2014), Yuting He, Fan Zhang, Tim DeFreitas, Spencer Keilich, Hachem Saddiki, Patrick Flaherty<br/>
-Affiliation:    Worcester Polytechnic Institute
-Date:           May 28, 2014<br/>
-Copyright:    <br/>
-Keywords:</p>
-
-<p>Last update: May 14, 2014</p>
-
+<p>Title:			Getting Started in Flaherty Lab
+Subtitle:		Handbook for New Members
+Author:			Yifan Zhao (2014), Tete Zhang (2014), Yuting He, Fan Zhang, Tim DeFreitas, Spencer Keilich, Hachem Saddiki, Patrick Flaherty<br />
+Affiliation:	Worcester Polytechnic Institute
+Date:			June 03, 2014<br />
+Copyright:		
+Keywords:		</p>
+<p>Last update: June 03, 2014</p>
 <h1>Your First Day</h1>
-
 <p>Congratulations, and welcome! This guide is written by people who've been where you are and want to help you to have a productive and successful experience here.</p>
-
 <p><strong><em>You should first read through this document and configure your computer with necessary software. Understanding the contents in this document will help you establish a good habit on conducting reproducible experiments.</em></strong></p>
-
 <p>There are a few things you need to do to get started.</p>
-
 <ol>
 <li><a href="#serversetup">Request your account on our server <code>redwood.wpi.edu</code> from Sia Najafi.</a></li>
 <li>Request to be added to our mailing list <code>flahertylab@wpi.edu</code>. The webpage for him to do that can be found <a href="https://www.wpi.edu/Academics/CCC/Services/Email/mailinglist.html">here</a>.</li>
 <li>Clone the <code>common</code> repository using git into the Research folder in your home directory on <code>redwood.wpi.edu</code>.</li>
 <li>Set up your environment on <code>redwood.wpi.edu</code></li>
 </ol>
-
-
 <p>Once you've set up your environment on redwood, then you'll need to start learning about the software, systems and culture for the lab. Read on...</p>
-
-<h2><a name = "serversetup"></a>Requesting Access to <code>redwood.wpi.edu</code></h2>
-
-<p><code>redwood.wpi.edu</code> is our primary linux server for computation. It's a 64 core machine with 256Gb RAM. In addition to onboard storage, we have a 9Tb high speed drive +1Tb solid-state drive attached to redwood via NFS for storing our data.</p>
-
+<h2><a name = "serversetup"></a>Requesting Access to redwood.wpi.edu</h2>
+<p><code>redwood.wpi.edu</code> is our primary linux server for computation. It's a 64 core machine with 256Gb RAM. In addition to onboard storage, we have a 9Tb high speed drive +1Tb solid-state drive attached to redwood via NFS for storing our data. </p>
 <ol>
-<li><p>Ask Prof. Flaherty to add you to the flahertylab group through CCC. The webpage to do that is <a href="http://www.wpi.edu/+gred">here</a>.</p></li>
-<li><p>Send the following email to <strong>Sia Najafi</strong> and cc Prof. Flaherty for an account on redwood. It is <em>very important</em> that Sia adds your account under the <code>flahertylab</code> unix group.</p>
-
-<p> Your email should read as follows</p>
-
-<blockquote><p>Dear Mr. Najafi</p>
-
+<li>
+<p>Ask Prof. Flaherty to add you to the flahertylab group through CCC. The webpage to do that is <a href="http://www.wpi.edu/+gred">here</a>.</p>
+</li>
+<li>
+<p>Send the following email to <strong>Sia Najafi</strong> and cc Prof. Flaherty for an account on redwood. It is <em>very important</em> that Sia adds your account under the <code>flahertylab</code> unix group. </p>
+<p>Your email should read as follows</p>
+<blockquote>
+<p>Dear Mr. Najafi</p>
 <p>I'm writing to request an account on Prof. Flaherty's compute server redwood.wpi.edu. Prof. Flaherty would like my default group to be flahertylab. We would like access to research.wpi.edu for a Mac and Windows machine as well.</p>
-
 <p>I have already added myself to the flahertylab group through the CCC website.</p>
-
 <p>If there is anything I can do to help, please let me know.</p>
-
 <p>Thank you,
-Your name</p></blockquote></li>
-<li><p>Once you have your account name and password, change your password using <code>yppasswd</code>. (You need to finish Steps 3, 4, and 5 in a terminal application. Please see <a href="#ta">the next section</a> for details.)</p></li>
-<li><p>Check that you are in the flahertylab group using the command <code>groups</code> at the command prompt on redwood. If you don't see <code>flahertylab</code> as the first group, you need to speak with Prof. Flaherty to get that fixed.</p></li>
-<li><p>Use <code>ypchsh</code> to change your default shell to <code>/bin/bash</code>.</p></li>
+Your name</p>
+</blockquote>
+</li>
+<li>
+<p>Once you have your account name and password, change your password using <code>yppasswd</code>. (You need to finish Steps 3, 4, and 5 in a terminal application. Please see <a href="#ta">the next section</a> for details.)</p>
+</li>
+<li>
+<p>Check that you are in the flahertylab group using the command <code>groups</code> at the command prompt on redwood. If you don't see <code>flahertylab</code> as the first group, you need to speak with Prof. Flaherty to get that fixed.</p>
+</li>
+<li>
+<p>Use <code>ypchsh</code> to change your default shell to <code>/bin/bash</code>.</p>
+</li>
 </ol>
-
-
 <h2><a name = "ta"></a> Terminal Application</h2>
-
 <p>A terminal application allows you to connect to our server, check the directories and files on it, and perform computations. Here are examples of commonly used terminal applications. After you installed them, and if you are not familiar with Linux commands, you can read the section about <a href="#lc">Linux commands</a>.</p>
-
 <p><strong>Windows</strong></p>
-
 <p>X-win32 can be download from campus. Detailed instructions for installing and configuring X-Win32 can be found on the <a href="http://www.wpi.edu/Academics/CCC/Help/Software/xwin.html">CCC website</a>.
-Instructions for X-Win32 configuration can be found at <a href="http://www.wpi.edu/Academics/CCC/Help/Software/xwin.html">http://www.wpi.edu/Academics/CCC/Help/Software/xwin.html</a>. However, there are some minor changes in both installation procedures and configuration procedures.</p>
-
-<p>For installation, most steps lists on ccc website stay the same, but the folder "<em>X-Win32 9.2</em>" doesn't exist. Instead of looking for this folder, directly double click on the shortcut "<em>Install X-Win32 2012 (1178)</em>".</p>
-
+Instructions for X-Win32 configuration can be found at <a href="http://www.wpi.edu/Academics/CCC/Help/Software/xwin.html">http://www.wpi.edu/Academics/CCC/Help/Software/xwin.html</a>. However, there are some minor changes in both installation procedures and configuration procedures. </p>
+<p>For installation, most steps lists on ccc website stay the same, but the folder &quot;<em>X-Win32 9.2</em>&quot; doesn't exist. Instead of looking for this folder, directly double click on the shortcut &quot;<em>Install X-Win32 2012 (1178)</em>&quot;. </p>
 <p>This is how you configure it:</p>
-
 <ol>
 <li>Click on X-Win32 and the configuration window will pop-up.</li>
-<li>On the right hand side, click on Wizard, select "ssh" and name it "redwood".</li>
+<li>On the right hand side, click on Wizard, select &quot;ssh&quot; and name it &quot;redwood&quot;.</li>
 <li>Type in the host name: redwood.wpi.edu.</li>
 <li>ONLY type in your login and then click next. This is for security reasons: you always want X-Win32 to prompt you for your password .</li>
 <li>Choose linux, click finish, your redwood connection will appear in the initial configuration window.</li>
 <li>Now, drag your redwood connection under Autostart folder, click OK.</li>
 <li>Click again on X-Win32 to get connected to redwood.</li>
 </ol>
-
-
 <p><strong>Mac:</strong></p>
-
-<p>Terminal is the Mac equivalence of X-win32. After opening up the Terminal application, type in command <code>ssh yourusername@redwood.wpi.edu</code> and hit enter key. Then enter your password under instruction. Now you should be able to access redwood successfully and you may change your password using command "yppasswd".</p>
-
+<p>Terminal is the Mac equivalence of X-win32. After opening up the Terminal application, type in command <code>ssh yourusername@redwood.wpi.edu</code> and hit enter key. Then enter your password under instruction. Now you should be able to access redwood successfully and you may change your password using command &quot;yppasswd&quot;.</p>
 <h2>Cloning the <code>common</code> Repository</h2>
-
 <p>We have a special repository called <code>common</code> that contains all of the files you need to set up your environment on <code>redwood</code> and get you started in the lab.</p>
-
 <p>This procedure will create a <code>Research</code> folder and clone the common repository into it.</p>
-
 <p>Just after you log in enter the following at the command prompt ($):</p>
-
 <pre><code>$ mkdir Research
 $ cd Research
 $ git clone ssh://redwood.wpi.edu/research/pjflaherty/flahertylab/git/common.git common
 </code></pre>
 
 <p>You will be asked to enter your password to log into redwood again. This is just so that you can pull the code. <code>git</code> will logout when done.</p>
-
 <p>Type <code>ls</code> to list the directory. You should now see a folder called <code>common</code>. Navigate into that folder using <code>cd common</code>. Now with <code>ls</code> you should see several folder. One of which is <code>gettingstarted</code>. That folder contains this document.</p>
-
 <h2>Set Up Your Environment on Redwood</h2>
-
 <p>Navigate to <code>~/Research/common/dotfiles</code> and enter the following command at the command prompt <code>$source link_dotfiles.sh</code>.</p>
-
 <p>This will place links to the environment setup dotfiles in your home directory. Next time you login you will have the default lab setup.</p>
-
 <h1>Setting Up Your Personal Computer</h1>
-
 <p>Start by updating your personal computer, so that your environment matches or plays nice with Flaherty Lab infrastructure. Here is a list of topics to be covered in this step:</p>
-
 <ul>
 <li><a href="#te">Text Editor</a></li>
 <li><a href="#sm">Server Map</a></li>
 <li><a href="#p">Printer</a></li>
 </ul>
-
-
 <h2><a name = "te"></a> Text Editor</h2>
-
-<p>The text editor is not only used for contributing to this document, but more importantly can be used for recording your lab work. It is also not a common sense text editor like Microsoft Word, but more like a website designer where your file can be output as files of multiple formats.</p>
-
+<p>The text editor is not only used for contributing to this document, but more importantly can be used for recording your lab work. It is also not a common sense text editor like Microsoft Word, but more like a website designer where your file can be output as files of multiple formats. </p>
 <p><strong>Windows:</strong></p>
-
 <p>Download <a href="http://markdownpad.com/">MarkdownPad</a>, <a href="http://notepad-plus-plus.org/">NotePad++</a>, or <a href="http://www.sublimetext.com/2">Sublime text</a>.</p>
-
-<p>If you use Markdown Pad, please read the documents in the Help menu carefully to get familiar witht the syntax. You can start with <em>Open Welcome Document</em>, and then read the <a href="http://daringfireball.net/projects/markdown/"><em>Standard Markdown Syntax</em></a>, and <em>Markdown Extra Syntax</em>. There is a <a href="http://warpedvisions.org/projects/markdown-cheat-sheet/">cheat sheet</a> to help you.</p>
-
+<p>If you use Markdown Pad, please read the documents in the Help menu carefully to get familiar with the syntax. You can start with <em>Open Welcome Document</em>, and then read the <a href="http://daringfireball.net/projects/markdown/"><em>Standard Markdown Syntax</em></a>, and <em>Markdown Extra Syntax</em>. There is a <a href="http://warpedvisions.org/projects/markdown-cheat-sheet/">cheat sheet</a> to help you.</p>
 <p>After reading the guides, you should be able to make words bold or italic, make headings, quotes and code blocks, and insert URLs or graphs.</p>
-
 <p><strong>Mac:</strong></p>
-
 <p>Download the program <a href="http://macromates.com">Textmate</a> or <a href="http://mouapp.com/">Mou</a>. The syntax is similar to that of Markdown.</p>
-
 <h2>Mapping research.wpi.edu</h2>
-
 <p>Drive mapping is how Microsoft Windows and OS/2 associate a local drive letter (A through Z) with a shared storage area to another computer over a network.</p>
-
-<p><strong>Windows:</strong></p>
-
-<p>Computer->map network drive->Drive: select a drive that's not usually used, for example S:  Folder: <code>\\research.wpi.edu\flahertylab</code></p>
-
+<p><strong>Windows:</strong> </p>
+<p>Computer-&gt;map network drive-&gt;Drive: select a drive that's not usually used, for example S:  Folder: <code>\\research.wpi.edu\flahertylab</code></p>
 <p>Please enter your WPI usersname and password. Then, check the two checkboxes: Reconnect at logon and connect using different credentials.</p>
-
 <p><strong>Mac:</strong></p>
-
-<p>Finder -> Go -> Connect to Server -> smb://research.wpi.edu/flahertylab</p>
-
+<p>Finder -&gt; Go -&gt; Connect to Server -&gt; smb://research.wpi.edu/flahertylab</p>
 <p>Please enter your WPI username and password.</p>
-
 <p>You should see a folder with your username. That is the same folder you enter when you log into redwood.wpi.edu. Anything you change in the windows drive will also change in the redwood.wpi.edu environment.</p>
-
 <h2><a name = "p"></a> Printer</h2>
-
 <p>Connect to the printer in the lab.</p>
-
-<p><strong>Windows:</strong></p>
-
-<p>In order to connect your Windows machine to the printer, click on the start button, then on the search field type: <code>\\printers.wpi.edu</code> and hit enter. Then a window will pop up and ask for your WPI username and password. Remember to change the domain to "ADMIN" by typing <code>ADMIN\username</code> or <code>username@wpi.edu</code> in the username column.
-A window with all the available printers will pop-up. Look for "p60_biomed3". Double click on it to connect. It will take a few minutes to set up. Before you are allowed to print, however, you must add a user ID in the print settings.</p>
-
-<p>Go to the control panel and right click on the printer, then select "Printing Preferences". Go to job setup, and enter in the user ID, and click OK. It is also a good idea to go into the edit menu and enable 2-sided printing.</p>
-
+<p><strong>Windows:</strong> </p>
+<p>In order to connect your Windows machine to the printer, click on the start button, then on the search field type: <code>\\printers.wpi.edu</code> and hit enter. Then a window will pop up and ask for your WPI username and password. Remember to change the domain to &quot;ADMIN&quot; by typing <code>ADMIN\username</code> or <code>username@wpi.edu</code> in the username column.
+A window with all the available printers will pop-up. Look for &quot;p60_biomed3&quot;. Double click on it to connect. It will take a few minutes to set up. Before you are allowed to print, however, you must add a user ID in the print settings.</p>
+<p>Go to the control panel and right click on the printer, then select &quot;Printing Preferences&quot;. Go to job setup, and enter in the user ID, and click OK. It is also a good idea to go into the edit menu and enable 2-sided printing.</p>
 <p><strong>Mac:</strong></p>
-
-<p><a href="https://www.wpi.edu/Academics/CCC/Help/Software/Macintosh/macprinting.html">Here</a> is the guideline on how to add a printer on campus generally. The address of the printer is <code>p60-biomed3.wpi.edu</code>.</p>
-
+<p><a href="http://www.wpi.edu/Academics/CCC/Help/Software/Macintosh/ricoh.html">Here</a> is the guideline on how to add a printer on campus generally. The address of the printer is <code>p60-biomed3.wpi.edu</code>. The user code should be assigned by Professor Flaherty. </p>
 <h1><a name = "lc"></a>Linux Commands</h1>
-
-<p><code>cd</code>: Change Directory</p>
-
-<p><code>cd ../</code>: Go to the Directory One Level Above</p>
-
-<p><code>cd ../../</code>: Go to the Directory Two Levels Above</p>
-
+<p><code>cd</code>: Go to the Directory Above</p>
+<p><code>cd ../</code>: Go to the Directory One Level Below</p>
+<p><code>cd ../../</code>: Go to the Directory Two Levels Below</p>
 <p><code>cd ./</code>: Current Directory, Where the Command Prompt Is</p>
-
 <p><code>echo</code>: Display Text on Screen</p>
-
 <p><code>exit</code>: Exit the Shell</p>
-
 <p><code>history</code>: Shows Commands History</p>
-
 <p><code>ls</code>: Prints out Files Available in the Present Working Directory</p>
-
 <p><code>ls -l</code>: List in Long Format, Provides More Info about All Files</p>
-
 <p><code>ls -a</code>: Lists All Files Including the Hidden Ones</p>
-
-<p><code>man "function/commandname"</code>: Help Manual</p>
-
-<p><code>mkdir</code>: Create New Directory</p>
-
+<p><code>man &quot;function/commandname&quot;</code>: Help Manual</p>
+<p><code>mkdir</code>: Make New Directory</p>
 <p><code>pwd</code>: Print Working Directory</p>
-
 <p><code>rm</code>: Remove File(s)</p>
-
 <p><code>who</code>: Shows All Users Online</p>
-
 <p><code>--help</code>: Prints the Synopsis and a List of the Most Commonly Used Commands</p>
-
 <p>We've collected some useful unix tips and tricks here.
 The following is retrieved from <a href="http://mmb.pcb.ub.es/~carlesfe/unix/tricks.txt">http://mmb.pcb.ub.es/~carlesfe/unix/tricks.txt</a>.</p>
-
 <p><a href="./reference/linux_tutorial.pdf">Here</a> is another recommended tutorial. You can skip the first part and start reading from Page 6.</p>
-
 <p>Writing good bash scripts can be challenging. Use this <a href="http://www.tldp.org/LDP/abs/html/">guide</a> to get the basics. And use this <a href="http://www.davidpashley.com/articles/writing-robust-shell-scripts.html">guide</a> to make your code more robust.</p>
-
 <h1><a name = "gg"></a> Version Control: GIT</h1>
-
 <p>We use a version control system git in the lab extensively. The system has a tree structure that bears all the work in the shared drive. Git allows many people to work on the same project at the same time, and avoids the confusion caused by keeping track of the updated versions of the same file. The following paragraph describes the steps for your to complete a job using Git.</p>
-
-<p>At the beginning of your work, you should <strong>clone</strong> a copy of the repository to your local drive and this is your own branch of the central repository. You can edit the files under the copied repository. All work should be saved under the copy of the repository in the end. Here you may <strong>stage (add)</strong> your changes to save it on your own branch, <strong>commit</strong> your changes to make recorded changes to your own branch, and <strong>push</strong> your changes to make recorded changes to the main repository. Also, you would be able to <strong>fetch</strong> from the main repository to see what others have done to the same experiment and <strong>pull</strong> the changes if you feel like merging others' work with yours. All the changes made to the main repository is recorded so that the activities at any time spot can always be undone.</p>
-
-<p>If there's any collision where you and your teammate have done the same changes to the repository, only the first one who pushes would be able to push and the second push would be denied. Whenever this happens, the second person should first pull from the first person and push again to make other changes. To keep the collision to a minimum, you and your teammate should keep the communication open and distribute the work properly to make sure that you are working accordingly and efficiently on the project.</p>
-
-<p>The GIT Graphic User Interface (GUI) is very useful and easy to start with software for version control purposes in the lab. The detailed instructions of the commands will be introduced in later parts of this document.</p>
-
-<p><strong>Windows:</strong></p>
-
-<p>You can either download <a href="http://msysgit.github.com/">Git for Windows</a> or <a href="http://www.sourcetreeapp.com">SourceTree for Windows</a>.</p>
-
+<p>At the beginning of your work, you should <strong>clone</strong> a copy of the repository to your local drive and this is your own branch of the central repository. You can edit the files under the copied repository. All work should be saved under the copy of the repository in the end. Here you may <strong>stage (add)</strong> your changes to save it on your own branch, <strong>commit</strong> your changes to make recorded changes to your own branch, and <strong>push</strong> your changes to make recorded changes to the main repository. Also, you would be able to <strong>fetch</strong> from the main repository to see what others have done to the same experiment and <strong>pull</strong> the changes if you feel like merging others' work with yours. All the changes made to the main repository is recorded so that the activities at any time spot can always be undone. </p>
+<p>If there's any collision where you and your teammate have done the same changes to the repository, only the first one who pushes would be able to push and the second push would be denied. Whenever this happens, the second person should first pull from the first person and push again to make other changes. To keep the collision to a minimum, you and your teammate should keep the communication open and distribute the work properly to make sure that you are working accordingly and efficiently on the project. </p>
+<p>The GIT Graphic User Interface (GUI) is very useful and easy to start with software for version control purposes in the lab. The detailed instructions of the commands will be introduced in later parts of this document. </p>
+<p><strong>Windows:</strong> </p>
+<p>You can either download <a href="http://msysgit.github.com/">Git for Windows</a> or <a href="http://www.sourcetreeapp.com">SourceTree for Windows</a>. </p>
 <p>The configuration steps below are for SourceTree. After downloading it, install all as default.</p>
-
-<p>Click Clone/New -> clone repository ->Source: <code>ssh://username@redwood.wpi.edu/home/pjflaherty/flahertylab/git/common.git</code></p>
-
+<p>Click Clone/New -&gt; clone repository -&gt;Source: <code>ssh://username@redwood.wpi.edu/home/pjflaherty/flahertylab/git/projectfoldername.git</code></p>
 <p>You need to enter your password for this.</p>
-
 <p>Target: should be somewhere safe.</p>
-
 <p>Clone Type: Standard.</p>
-
-<p><strong>Mac:</strong></p>
-
+<p><strong>Mac:</strong> </p>
 <p><a href="http://www.sourcetreeapp.com">http://www.sourcetreeapp.com</a>.</p>
-
-<p>Run Source Tree -> Clone Repository ->
-Source Path:<code>ssh://username@redwood.wpi.edu/home/pjflaherty/flahertylab/git/common.git</code></p>
-
-<p>Destination Path: should be somewhere safe.</p>
-
+<p>Run Source Tree -&gt; Clone Repository -&gt;
+Source Path:<code>ssh://username@redwood.wpi.edu/home/pjflaherty/flahertylab/git/projectfoldername.git</code></p>
+<p>Destination Path: should be somewhere safe. </p>
 <p>You need to enter your redwood password for this.</p>
-
 <p><strong>Linux:</strong></p>
-
 <p>However most of the work in the lab is done over command line in linux. A good intro is available <a href="http://pcottle.github.io/learnGitBranching/">here</a>. And here is a good <a href="http://zrusin.blogspot.com/2007/09/git-cheat-sheet.html">cheat sheet</a> for Git commands.</p>
-
 <p><img src="./figures/git_cheat_sheet.png" alt="Alt text" /></p>
-
 <h6>Commonly Used GIT Commands</h6>
-
 <ul>
-<li><p><code>git status</code>: Show the working tree status.</p></li>
-<li><p><code>git clone</code>: Clone the existing project.</p></li>
-<li><p><code>git pull</code>: Fetch from and merge with another repository or a local branch.</p></li>
-<li><p><code>git add</code>: Add file contents to the index.</p></li>
-<li><p><code>git commit</code>: Record changes to the repository. You can use <code>git commit -m</code> and a quoted sentence to discribe what you have done.</p></li>
-<li><p><code>git push</code>: Update remote refs along with associated objects. Only pushed files can be seen by others. Committed files won't be seen by others.</p></li>
+<li><code>$ git status</code>: Show the working tree status.</li>
+<li><code>$ git clone</code>: Clone the existing project. </li>
+<li><code>$ git pull</code>: Fetch from and merge with another repository or a local branch.</li>
+<li><code>$ git add</code>: Add file contents to the index.</li>
+<li><code>$ git commit</code>: Record changes to the repository. You can use <code>git commit -m</code> and a quoted sentence to describe what you have done.</li>
+<li><code>$ git push</code>: Update remote refs along with associated objects. Only pushed files can be seen by others. Committed files won't be seen by others.</li>
 </ul>
-
-
 <h6>Checking what branches are available</h6>
-
 <ul>
 <li><code>$ git ls-remote</code> shows all of the branches that are available remotes regardless of whether you're tracking them locally or not.</li>
-<li><code>$ git branch</code> shows all of the <em>local</em> branches</li>
+<li><code>$ git branch</code> shows all of the <em>local</em> branches </li>
 <li><code>$ git branch -r</code> shows all of the <em>remote</em> branches being tracked</li>
 </ul>
-
-
 <h6>Switching branches</h6>
-
-<p>Often we want to switch to a different branch that's available on the server.</p>
-
+<p>Often we want to switch to a different branch that's available on the server.  
+</p>
 <ol>
-<li><p><code>$ git remote</code> Shows the names of the remote server nicknames that you can pull from. Call this <code>&lt;repository&gt;</code>.</p></li>
-<li><p><code>$ git ls-remote &lt;repository&gt;</code> Shows the branches that are available on that repository that you can pull from. It's best to pull a branch that is also a head. You can isolate those using <code>$ git ls-remote --heads &lt;repository&gt;</code>.</p></li>
-<li><p><code>git pull &lt;repository&gt; &lt;branch&gt;</code> Pulls a current branch from the repository. Make sure you don't have any uncommitted changes; if so use the stash.</p></li>
+<li>
+<p><code>$ git remote</code> Shows the names of the remote server nicknames that you can pull from. Call this <code>&lt;repository&gt;</code>.</p>
+</li>
+<li>
+<p><code>$ git ls-remote &lt;repository&gt;</code> Shows the branches that are available on that repository that you can pull from. It's best to pull a branch that is also a head. You can isolate those using <code>$ git ls-remote --heads &lt;repository&gt;</code>.  
+</p>
+</li>
+<li>
+<p><code>$ git pull &lt;repository&gt; &lt;branch&gt;</code> Pulls a current branch from the repository. Make sure you don't have any uncommitted changes; if so use the stash. </p>
+</li>
 </ol>
-
-
 <h5>More Advanced Commands</h5>
-
 <h6>Initializing a shared remote repository</h6>
-
 <p>Set up a new <em>remote</em> repository that a group can read/write on the server <a href="http://kovshenin.com/2011/howto-remote-shared-git-repository/">Reference</a></p>
-
 <p>You must have write permissions to the directory you want to put the repository in.</p>
-
 <p>First <code>cd</code> to <code>flahertylab/git</code> or wherever you want to put the repository to create <code>project.git</code> remote repository. The common group is <code>flahertylab</code>.</p>
-
 <pre><code>$ newgrp flahertylab
 $ mkdir -p project.git
 $ cd project.git
@@ -454,153 +488,112 @@ $ sudo chgrp -R flahertylab .
 
 <p>Then set up a hook to change the file permissions in
 Create the following file: project.git/hooks/post-update</p>
-
 <pre><code>#!/bin/sh
 chmod -R g+rwX . 2&gt;/dev/null
 chgrp -R flahertylab . 2&gt;/dev/null
 </code></pre>
 
 <h6>Linking a local git repository to a remote repository</h6>
-
 <ol>
 <li><code>$ git init</code> within the local directory to put it under control</li>
 <li><code>$ git remote add shortname path_to_remote</code> where shortname is <code>research</code> or <code>origin</code> or whatever you want to call it. And <code>path_to_remote</code> is a full path to the remote repo.</li>
 <li><code>$ git push origin master</code> where origin is the shortname for the remote repo and master is the branch you are on.</li>
 </ol>
-
-
 <h6>Git References</h6>
-
 <ul>
 <li><a href="http://scottr.org/presentations/git-in-5-minutes/">Git in 5 Minutes</a></li>
 <li><a href="http://software-carpentry.org/v5/novice/git/index.html">Version Control with Git - Software Carpentry</a></li>
 </ul>
-
-
 <h6>Some Common Git Problems &amp; Solutions</h6>
-
 <ol>
-<li><p>Sometimes a user will be denied access to a shared repository on redwood. When cloning the repository, include your username in the ssh link as shown below:
- <code>$ git clone ssh://yourusername@redwood.wpi.edu/research/pjflaherty/flahertylab/git/gettingstarted.git gettingstarted</code></p></li>
-<li><p>The difference between clone and pull.</p>
-
-<p> Clone: copy the directory to your local drive/create your own branch (only do once for each project).</p>
-
-<p> Pull: copy the changes to the repository to your local drive (done multiple times when developing the project, manually controlled by the project manager).</p></li>
-<li><p>Great git Manual Page:
-<a href="http://www.kernel.org/pub/software/scm/git/docs/">http://www.kernel.org/pub/software/scm/git/docs/</a></p></li>
+<li>
+<p>Sometimes a user will be denied access to a shared repository on redwood. When cloning the repository, include your username in the ssh link as shown below:</p>
+<p><code>$ git clone ssh://yourusername@redwood.wpi.edu/research/pjflaherty/flahertylab/git/common.git</code></p>
+</li>
+<li>
+<p>The difference between clone and pull.</p>
+<p>Clone: copy the directory to your local drive/create your own branch (only do once for each project).</p>
+<p>Pull: copy the changes to the repository to your local drive (done multiple times when developing the project, manually controlled by the project manager).</p>
+</li>
+<li>
+<p>Great git Manual Page:
+<a href="http://www.kernel.org/pub/software/scm/git/docs/">http://www.kernel.org/pub/software/scm/git/docs/</a></p>
+</li>
 </ol>
-
-
+<h6>GIT Flow in Flaherty Lab</h6>
+<p>You might have read about the git repository structure of a game design company. However the structure can be different according to the types of work we do and the Flaherty Lab has its own GIT flow. </p>
+<p><img src="./figures/GIT_flow.jpg" alt="Alt text" /></p>
+<p>According to the picture, we can see that we open a new repository for each project and create a master repository for it. Under that we have the develop branch where most of the work are kept. Under the develop branch we may branch out for various features/experiments of the project, and even smaller ones for individual work. After a good amount and quality of code is written, we may push it back to the develop branch. And when the project is developed enough to write a paper, we would push it to release with all the paper writing components. </p>
 <h1>Reproducible Experiments</h1>
-
 <p>The lab is multi-disciplinary and we all have some background in genetics, computer science and statistics. Everyone has one area they're best at, one they're mediocre at and one they just survive. To be successful, find people in the lab who complement your weakness while you work to get better at all three.</p>
-
-<p>The <strong>three most important concepts in software engineering are: DRY, test, and document</strong>. <strong>DRY</strong> stands for "don't repeat yourself". If you find yourself cutting and pasting code, figure out a way to make it a reusable function. <strong>Testing</strong> is critical to all good software development and often is ignored because it's hard to do. As a corollary, if you're good at developing boundary and unit tests, it's very easy to find a high paying job. Try to write the tests before the code or at least think of what tests you need before you write the code. Lastly, <strong>documentation</strong> is the key to good research and software. Comment your code. More importantly, keep a paper or electronic lab notebook. For each experiment, write down (1) the purpose of the experiment, (2) what you expect to happen as a result and (3) what you actually observed. This becomes the raw material for presentations, papers and patents. If you don't document it, it never happened.</p>
-
+<p>The <strong>three most important concepts in software engineering are: DRY, test, and document</strong>. <strong>DRY</strong> stands for &quot;don't repeat yourself&quot;. If you find yourself cutting and pasting code, figure out a way to make it a reusable function. <strong>Testing</strong> is critical to all good software development and often is ignored because it's hard to do. As a corollary, if you're good at developing boundary and unit tests, it's very easy to find a high paying job. Try to write the tests before the code or at least think of what tests you need before you write the code. Lastly, <strong>documentation</strong> is the key to good research and software. Comment your code. More importantly, keep a paper or electronic lab notebook. For each experiment, write down (1) the purpose of the experiment, (2) what you expect to happen as a result and (3) what you actually observed. This becomes the raw material for presentations, papers and patents. If you don't document it, it never happened.</p>
 <p>After following this step, you are expected to be familiar with the following topics:</p>
-
 <ul>
 <li><a href="#dh">Data Management</a></li>
 <li><a href="#spf">Structure of a Project Folder</a></li>
 <li><a href="#sff">Standard File Formats</a></li>
 <li><a href="#ps">Programming Style</a></li>
 </ul>
-
-
 <hr />
-
 <h2><a name = "dh"></a> Data Management</h2>
-
 <p>Please follow this procedure when downloading big or important data sets.</p>
-
 <ol>
 <li>Download the data and store it in the freezer folder.</li>
 <li>Change the permissions for the data to read-only.</li>
-<li>Create and verify the MD5 checksum using command line.</li>
-<li>Write a README file (.txt) that contains: who downloaded the data, where they downloaded it from, when the downloaded it, any verison information for the data, the MD5 checksum information.</li>
+<li>Create and verify the MD5 checksum using command line. </li>
+<li>Write a README file (.txt) that contains: who downloaded the data, where they downloaded it from, when the downloaded it, any version information for the data, the MD5 checksum information.</li>
 </ol>
-
-
-<p>To create a checksum,</p>
-
+<p>To create a checksum, </p>
 <pre><code>$ md5sum urfile1.txt urfile2.txt urfile3.txt &gt; md5.sum
 </code></pre>
 
-<p>To see the result of the checksum,</p>
-
+<p>To see the result of the checksum, </p>
 <pre><code>$ cat md5.sum
 595f44fec1e92a71d3e9e77456ba80d1  urfile1.txt
 71f920fa275127a7b60fa4d4d41432a3  urfile2.txt
 43c191bf6d6c3f263a8cd0efd4a058ab  urfile3.txt
 </code></pre>
 
-<p>To check the checksum value of all files,</p>
-
+<p>To check the checksum value of all files, </p>
 <pre><code>$ md5sum -c md5.sum
 urfile1.txt: OK
 urfile2.txt: OK
 urfile3.txt: OK
 </code></pre>
 
-<p>To check the checksum value of one file,</p>
-
-<pre><code>$ echo "595f44fec1e92a71d3e9e77456ba80d1  urfile1.txt" | md5 -c -
+<p>To check the checksum value of one file, </p>
+<pre><code>$ echo &quot;595f44fec1e92a71d3e9e77456ba80d1  urfile1.txt&quot; | md5 -c -
 urfile1.txt: OK
 </code></pre>
 
-<p>The algorithm would create a .bam file to keep the checksum value. A tutorial for creating and verifying checksums is <a href="http://klassenresearch.orbs.com/Checksums">here</a>.</p>
-
+<p>The algorithm would create a .bam file to keep the checksum value. A tutorial for creating and verifying checksums is <a href="http://klassenresearch.orbs.com/Checksums">here</a>. </p>
 <p>The MD5 algorithm has some vulnerabilities that you can read about on wikipedia. The current standard seems to be SHA2. However, MD5 is implemented on most systems including mac and linux and seems to be good enough for non-critical work.</p>
-
-<p>In the Flaherty Lab we have three levels of data, freezer data, fridge data and bench data.</p>
-
-<p>In a common wet lab, the bench data is the immediate data you collected on the bench, which is temporary but reflects the current status of your study objects. The fridge data are collected from study objects preserved in a fridge, which lasts longer than the bench data, and should be able to tell a longer story about the study objects. The freezer data is collect in an extremely cold environment where the study objects last the longest.</p>
-
-<p>In a bioinformatics lab these three levels of data meant differently but kept the same concept.</p>
-
+<p>In the Flaherty Lab we have three levels of data, freezer data, fridge data and bench data. </p>
+<p>In a common wet lab, the bench data is the immediate data you collected on the bench, which is temporary but reflects the current status of your study objects. The fridge data are collected from study objects preserved in a fridge, which lasts longer than the bench data, and should be able to tell a longer story about the study objects. The freezer data is collect in an extremely cold environment where the study objects last the longest. </p>
+<p>In a bioinformatics lab these three levels of data meant differently but kept the same concept. </p>
 <h3>Freezer</h3>
-
-<p>The freezer folder, located one level above your personal directory, keeps the primary data you collected or downloaded. They should be kept in the folder once added. Since a little amount of data lost or corruption might influence the future analysis, we need to do the checksum algorithm mentioned above every time new data is added to the folder.</p>
-
+<p>The freezer folder, located one level above your personal directory, keeps the primary data you collected or downloaded. They should be kept in the folder once added. Since a little amount of data lost or corruption might influence the future analysis, we need to do the checksum algorithm mentioned above every time new data is added to the folder. </p>
 <h3>Fridge</h3>
-
-<p>The fridge contains the secondary data, which you have modified for the purpose of your project. It is not the primary data but can be considered primary for your project. To reproduce your data for the project, the algorithm you used to create the fridge data should be contained in the fridge. The detailed information of what to put in the fridge will be elaborated in the <a href="#fridge">project storage structure section</a>.</p>
-
+<p>The fridge contains the secondary data, which you have modified for the purpose of your project. It is not the primary data but can be considered primary for your project. To reproduce your data for the project, the algorithm you used to create the fridge data should be contained in the fridge. The detailed information of what to put in the fridge will be elaborated in the <a href="#fridge">project storage structure section</a>. </p>
 <h3>Bench</h3>
-
-<p>The bench data should be the result you get after running the data in the program you wrote. However here in the repository we only record the code you wrote to run the fridge data and the collective result you get (figures, tables, etc) since the data itself would be too big to store. However with the code that is stored here, your data result would be reproducible.</p>
-
+<p>The bench data should be the result you get after running the data in the program you wrote. However here in the repository we only record the code you wrote to run the fridge data and the collective result you get (figures, tables, etc) since the data itself would be too big to store. However with the code that is stored here, your data result would be reproducible. </p>
 <hr />
-
 <h2><a name = "spf"></a> Structure of a Project Folder</h2>
-
-<p>In the lab we have a standard way of organizing the experiment notes, data and resources so that your work is clear to everyone in the lab and helpful when compositing a research paper.</p>
-
-<p>First of all, you need to go inside your personal folder named with your WPI usename. Inside of that folder, create another new folder named "Research". Inside of the "Research" folder, you can create folders for all the different projects of yours.</p>
-
+<p>In the lab we have a standard way of organizing the experiment notes, data and resources so that your work is clear to everyone in the lab and helpful when compositing a research paper. </p>
+<p>First of all, you need to go inside your personal folder named with your WPI username. Inside of that folder, create another new folder named &quot;Research&quot;. Inside of the &quot;Research&quot; folder, you can create folders for all the different projects of yours. </p>
 <p>For each project, there are several folders you need to keep various forms of data. An example of this can be found here.</p>
-
 <p><img src="./figures/structure.png" alt="Alt text" /></p>
-
 <h3><a name = "fridge"> </a> data (Fridge)</h3>
-
-<p>The fridge keeps the secondary data, which is the modified primary data specific to your project. It can be normalized, statistically analyzed, or In order to make each branch of yours smaller, we are not keeping Gigabytes of modified data in the fridge. Instead you should create a Makefile which contains the code you wrote to analyze the primary data so that the program can always run by others, and the branch is smaller in the mean time.</p>
-
+<p>The fridge keeps the secondary data, which is the modified primary data specific to your project. It can be normalized, statistically analyzed, or In order to make each branch of yours smaller, we are not keeping Gigabytes of modified data in the fridge. Instead you should create a Makefile which contains the code you wrote to analyze the primary data so that the program can always run by others, and the branch is smaller in the mean time. </p>
 <p><strong>Notes on Makefile</strong></p>
-
-<p>Makefile is a file describing the relationship (most of the times computational) among data files and providing commands for developing and updating data files. It is derived from the C recompiler yet has nothing to do with the source code in this lab.</p>
-
-<p>Makefile is a series of commandline code and the general format of a Makefile command is:</p>
-
+<p>Makefile is a file describing the relationship (most of the times computational) among data files and providing commands for developing and updating data files. It is derived from the C recompiler yet has nothing to do with the source code in this lab. </p>
+<p>Makefile is a series of commandline code and the general format of a Makefile command is: </p>
 <pre><code>target:dependent(s)
 [tab]rules
 </code></pre>
 
-<p>Target is the output file you want as a result, dependent(s) are the files you need to create the target, and the rules include the relationship and the transformative commands between the target and the dependent. According to the rule of reproducible programming, the commands should be pre-written executable code.</p>
-
-<p>For instance, in your experiment you would like to create a <code>depthchart</code> file with a <code>pileup</code> file. The <code>pileup</code> file is created from the <code>bai</code> file, and the <code>bai</code> file is generated from the <code>bam</code> file stored in the freezer. Your Makefile command would look like this:</p>
-
+<p>Target is the output file you want as a result, dependent(s) are the files you need to create the target, and the rules include the relationship and the transformative commands between the target and the dependent. According to the rule of reproducible programming, the commands should be pre-written executable code. </p>
+<p>For instance, in your experiment you would like to create a <code>depthchart</code> file with a <code>pileup</code> file. The <code>pileup</code> file is created from the <code>bai</code> file, and the <code>bai</code> file is generated from the <code>bam</code> file stored in the freezer. Your Makefile command would look like this: </p>
 <pre><code>yourfile.dc : yourfile.pileup
     pileup2dc yourfile.pileup &gt; yourfile.dc
 yourfile.pileup : yourfile.bam
@@ -610,100 +603,63 @@ yourfile.bam : yourfile.sam
 </code></pre>
 
 <p><code>pileup2dc</code>, <code>samtools mpileup</code> and <code>samtools view</code> are pre-written executable functions.</p>
-
-<p>The order of the command matters since the first file name it encounters, i.e. <code>yourfile.dc</code> in the example above, is treated as the final output file of the command. However if you have a complcated mapping of file type transformation, you can write</p>
-
+<p>The order of the command matters since the first file name it encounters, i.e. <code>yourfile.dc</code> in the example above, is treated as the final output file of the command. However if you have a complcated mapping of file type transformation, you can write </p>
 <pre><code>all : yourfile.dc
 </code></pre>
 
-<p>in the beginning or</p>
-
+<p>in the beginning or </p>
 <pre><code>clean : 
     rm yourfile.dc yourfile.pileup yourfile.bam
 </code></pre>
 
-<p>at the end of your commad so that the <code>all</code> file or the file that is not cleaned is recognized as the final output file type.</p>
-
+<p>at the end of your commad so that the <code>all</code> file or the file that is not cleaned is recognized as the final output file type. </p>
 <h3>docs</h3>
-
-<p>The Docs folder keeps the documents needed to construct the final paper. The first subfolder is "Notes", where you keep all the experiment notes that is useful to your final paper. The rest subfolders keeps all the tables, figures and other visual aids you plan to use. They should be separated by papers/reports since various journals may ask the scholar to arrange their tables and figures differently and separating them would be the easiest when the time comes to composite the final research paper.</p>
-
+<p>The Docs folder keeps the documents needed to construct the final paper. The first subfolder is &quot;Notes&quot;, where you keep all the experiment notes that is useful to your final paper. The rest subfolders keeps all the tables, figures and other visual aids you plan to use. They should be separated by papers/reports since various journals may ask the scholar to arrange their tables and figures differently and separating them would be the easiest when the time comes to composite the final research paper. </p>
 <h3>results</h3>
-
-<p>The results folder is the most detailed and important one of all folders (although every one of them is quintessential). All the subfolders in the "Results" folder are experiments you did for this project. They should be named precisely as <em>YYYY-MM-DD_Project Name</em> so that the computer may sort the experiments according to their start date. Inside of each experiment folder, you should keep a notebook, which is a markdown file containing the purpose, the materials and methods, the results and the conclusion of the experiment. The markdown file should be written using your text editor installed above and it will be the primary source of your research paper. Also, all the Matlab, python, R and any other assisting code files should be saved alongside the notes as well.</p>
-
+<p>The results folder is the most detailed and important one of all folders (although every one of them is quintessential). All the subfolders in the &quot;Results&quot; folder are experiments you did for this project. They should be named precisely as <em>YYYY-MM-DD_Project Name</em> so that the computer may sort the experiments according to their start date. Inside of each experiment folder, you should keep a notebook, which is a markdown file containing the purpose, the materials and methods, the results and the conclusion of the experiment. The markdown file should be written using your text editor installed above and it will be the primary source of your research paper. Also, all the Matlab, python, R and any other assisting code files should be saved alongside the notes as well.</p>
 <h3>src (source)</h3>
-
 <p>The source folder contains all the combined code you write for the experiment. Inside of the result might be pieces of small functions you write to run one specific step of the experiment, while in the source folder you should keep versions of the complete program.</p>
-
 <h3>bin</h3>
-
-<p>The bin folder contains all the executable files. They might be programs you find online that are helpful to the experiment, or they are compiled programs that you can execute with one command when programming. The folder is important for reproducible programming.</p>
-
+<p>The bin folder contains all the executable files. They might be programs you find online that are helpful to the experiment, or they are compiled programs that you can execute with one command when programming. The folder is important for reproducible programming. </p>
 <hr />
-
 <h2><a name = "sff"></a> Standard File Formats</h2>
-
 <p>You will often be reading and writing data and results files. In order to standardize the interface between apps that we write we use some standard file formats for data management.</p>
-
 <p><strong>Use HDF5 or CSV formats for data and models.</strong> MATLAB *.mat files are HDF5 format. Python has libraries (pytables, h5py) to read/write HDF5.</p>
-
-<p><strong>Use Markdown for documentation and notebook files.</strong></p>
-
+<p><strong>Use Markdown for documentation and notebook files.</strong>  
+</p>
 <p><strong>Use eps for figures</strong></p>
-
 <p><strong>Use docx or tex for manuscripts.</strong></p>
-
 <hr />
-
 <h2><a name = "ps"></a> Programming Style</h2>
-
 <p>We use functional programming for the majority of projects in the lab and we use object-oriented programming only where it really makes sense.</p>
-
 <p>Pure functions have meet two criteria:</p>
-
 <ol>
 <li><em>Referential Transparency</em> - They always return the <em>same result</em> given the <em>same arguments</em>.</li>
 <li><em>No side-effects</em> - They don't change the external world by changing external objects or interacting with i/o channels.</li>
 </ol>
-
-
 <p>Most of your code will fall into the pure function category and you can keep things orderly by following a few guidelines for the exceptions.</p>
-
 <ul>
-<li>If your function does interact with some i/o channel make sure that is the only thing your function does. Don't write a function that does some computation then writes the output to a file. Refactor to separate functions; one that computes and one that saves. Think of the "print" function here.'</li>
+<li>If your function does interact with some i/o channel make sure that is the only thing your function does. Don't write a function that does some computation then writes the output to a file. Refactor to separate functions; one that computes and one that saves. Think of the &quot;print&quot; function here.'</li>
 <li>Do your best to avoid global variables. This is not always possible, but should be absolutely minimized.</li>
-<li>GOTO is ok. Have a look at Don Knuth's <a href="http://cs.sjsu.edu/~mak/CS185C/KnuthStructuredProgrammingGoTo.pdf">Structured Programming with go to statements</a>. There are really good examples of how it massively clarifies initialization of very common algorithm paradigms. "break", "return" and "continue" commands in C and python accomplishes a goto-like behavior. "exceptions" do a similar thing in higher level programs like python as well.</li>
+<li>GOTO is ok. Have a look at Don Knuth's <a href="http://cs.sjsu.edu/~mak/CS185C/KnuthStructuredProgrammingGoTo.pdf">Structured Programming with go to statements</a>. There are really good examples of how it massively clarifies initialization of very common algorithm paradigms. &quot;break&quot;, &quot;return&quot; and &quot;continue&quot; commands in C and python accomplishes a goto-like behavior. &quot;exceptions&quot; do a similar thing in higher level programs like python as well.</li>
 </ul>
-
-
 <h1>Software</h1>
-
 <p>We primarily use <a href="http://www.mathworks.com">MATLAB</a>, <a href="http://www.python.org">Python</a> and C. Occasionally, you'll need to use another language such as bash shell, but only for very simple tasks that you could probably also do with one of those three. Knowing MATLAB will help you in most engineering jobs and academia. Google considers Python and C two of their core languages.</p>
-
 <ul>
 <li><a href="#mt">Matlab</a></li>
 <li><a href="#py">Python</a></li>
+<li><a href="#latex">LaTeX</a></li>
 <li><a href="#grb">Gurobi</a></li>
+<li><a href="#igv">IGV</a></li>
 </ul>
-
-
 <h2><a name = "mt"> </a> Matlab</h2>
-
 <p>Some tutorials to learn MATLAB are available <a href="http://www.mathworks.com/academia/student_center/tutorials/launchpad.html">here</a>. Don't buy any books or pay for anything. There are plenty of free resources to learn matlab out there.</p>
-
 <p>Go through the <a href="http://software-carpentry.org">Software Carpentry</a> lectures on version control, the shell, python, testing and MATLAB.</p>
-
-<h2><a name = "py"> </a>Python</h2>
-
+<h2><a name = "py"> </a> Python</h2>
 <p>Learn about testing using the <a href="http://nbviewer.ipython.org/github/swcarpentry/2012-11-scripps/blob/master/python/testing-with-nose.ipynb">nose</a> framework.  Learn about sharing results using <a href="http://ipython.org">ipython</a> notebooks. Learn about virtual environments</p>
-
 <h3>Essential Python Toolboxes</h3>
-
-<p>A good book to get started in data analysis with python is "Python for Data Analysis" by O'Reilly. You can read it through Safari Ebook at the Gordon Library.</p>
-
+<p>A good book to get started in data analysis with python is &quot;Python for Data Analysis&quot; by O'Reilly. You can read it through Safari Ebook at the Gordon Library.</p>
 <p>These are core modules and should always be available.</p>
-
 <ul>
 <li><a href="http://scikit-learn.org/0.6/index.html">scikits.learn</a> - machine learning and data mining</li>
 <li><a href="http://ipython.org">ipython</a> - interactive shell similar to MATLAB</li>
@@ -715,10 +671,7 @@ yourfile.bam : yourfile.sam
 <li><a href="http://www.picloud.com">cloud</a> - access to PiCloud's cloud-computing platform</li>
 <li><a href="http://docs.python.org/2/library/unittest.html">unittest</a> - unit testing framework</li>
 </ul>
-
-
 <h3>Machine-Learning &amp; Statistics Modules</h3>
-
 <ul>
 <li>[scikits.image]</li>
 <li>[scikits.timeseries]</li>
@@ -728,23 +681,21 @@ yourfile.bam : yourfile.sam
 <li>[pytables]</li>
 <li>[PIL]</li>
 </ul>
-
-
 <h3>Development Utilities Modules</h3>
-
 <ul>
 <li>[coverage]</li>
-<li><p>[nose]</p></li>
-<li><p>[distribute]</p></li>
+<li>
+<p>[nose]</p>
+</li>
+<li>
+<p>[distribute]</p>
+</li>
 <li>[scons] - substitute for make</li>
 <li>[codetools] - code analysis and execution tools</li>
 <li>[docutils]</li>
 <li>[Cython]</li>
 </ul>
-
-
 <h3>Data Input/Output Modules</h3>
-
 <ul>
 <li>[configobj]</li>
 <li>[h5py]</li>
@@ -753,17 +704,11 @@ yourfile.bam : yourfile.sam
 <li>[xlrd]</li>
 <li>[xlwt]</li>
 </ul>
-
-
 <h3>Bioinformatics Modules</h3>
-
 <ul>
 <li>[biopython]</li>
 </ul>
-
-
 <h3>Plotting Modules</h3>
-
 <ul>
 <li>[libjpeg]</li>
 <li>[libpng]</li>
@@ -771,26 +716,20 @@ yourfile.bam : yourfile.sam
 <li>[chaco] - interactive 2D plotting</li>
 <li><a href="http://nodebox.net">nodebox</a>- visualization tools similar to Processing.js</li>
 </ul>
-
-
 <h3>Internet Interface Modules</h3>
-
 <ul>
 <li>[tornado]</li>
 <li>[Twisted]</li>
 </ul>
-
-
+<h2><a name = "igv"></a> IGV</h2>
+<p>The Interactive Genomic Viewer is a high performance visualization tool for interactive exploration of large, integrated genomic datasets. It supports a wide variety of data types, including array-based and next generation sequence data, and genomic annotations. You may get the latest version of IGV <a href="http://www.broadinstitute.org/software/igv/download">here</a>, and read about how to use the software <a href="http://www.broadinstitute.org/software/igv/UserGuide">here</a>.</p>
+<h2><a name = "latex"> </a> LaTeX</h2>
+<p>LaTeX is a document preparation system and a high quality typesetting system that is designed for scientific and technical documentation. It is a programming system with simple syntax but great text format. Also, the beamer package embedded in LaTeX allows us to create presentations which are compatible to the git version control system. A simple introduction to LaTeX documentation can be found <a href="http://www.latex-project.org/">here</a> and an introduction to LaTeX Beamer can be found <a href="http://en.wikibooks.org/wiki/LaTeX/Presentations">here</a>. If you would like to learn specific how-tos, you may go on to <a href="http://tex.stackexchange.com/">TeX forum</a> or simply google to see how others have solved similar problems. </p>
 <h2><a name = "grb"> </a> Gurobi</h2>
-
 <p>Gurobi is an optimizer we use in the lab for mathematical programming. It is compatible with multiple programming interface including python.</p>
-
 <p>When installing gurobipy for python on MacOSX 10.8 you need to make the following changes.</p>
-
 <p>https://groups.google.com/forum/#!msg/gurobi/ArCkf4a40uU/R9U1XFuMJEkJ</p>
-
 <p>When trying to use Gurobi with Enthought's latest Canopy (formerly EPD), you'll probably get something like</p>
-
 <pre><code>$ ipython 
 
 In [1]: import gurobipy
@@ -799,9 +738,7 @@ Abort trap: 6
 </code></pre>
 
 <p>or some Library not found error.</p>
-
 <p>Here's what you need to do to get this fixed on Mac OS 10.8 (with Xcode installed):</p>
-
 <pre><code>$ python setup.py install (skip this line if you already installed Gurobi in Canopy's site-packages)
 In your ~/.profile, append the following after Canopy's call to source the activation file:
 export DYLD_LIBRARY_PATH=/Library/gurobi550/mac64/lib:$DYLD_LIBRARY_PATH
@@ -811,95 +748,60 @@ $ install_name_tool -change /System/Library/Frameworks/Python.framework/Versions
 </code></pre>
 
 <p>Step 3 needs to be repeated every time Gurobi is updated to a new version (until the issue is fixed of course).</p>
-
 <h1>Other Servers</h1>
-
 <h3>Amazon Machine Image (AMI)</h3>
-
-<p>You might have large amount of calculations to be done for your experiment. If the calculation requires 64 core server, the redwood server can handle it. However if it requires more, the processing time would be a lot longer if the work is done on redwood. Here we distribute the work to Amazon, which provides an amazing service "Amazon Machine Image" to do the calculation for us. The CrossCompute Amazon Machine Image has an iPython(interactive parallel computing in Python) notebook server with: numpy, scipy, h5py, pytables, matplotlib, pyramid, scikit-learn, pandas, statsmodels, networkx, theano, gdal, pysal, shapely. You need to launch a High-CPU Medium Instance to use it. The on-demand price is $0.145 per worker per hour and the spot instance price is $0.018 per worker per hour. The user's guide can be found <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html">here</a>.</p>
-
+<p>You might have large amount of calculations to be done for your experiment. If the calculation requires 64 core server, the redwood server can handle it. However if it requires more, the processing time would be a lot longer if the work is done on redwood. Here we distribute the work to Amazon, which provides an amazing service &quot;Amazon Machine Image&quot; to do the calculation for us. The CrossCompute Amazon Machine Image has an iPython(interactive parallel computing in Python) notebook server with: numpy, scipy, h5py, pytables, matplotlib, pyramid, scikit-learn, pandas, statsmodels, networkx, theano, gdal, pysal, shapely. You need to launch a High-CPU Medium Instance to use it. The on-demand price is $0.145 per worker per hour and the spot instance price is $0.018 per worker per hour. The user's guide can be found <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html">here</a>.</p>
 <h4>STAR Cluster</h4>
-
-<p>Although we usually use the iPython notebook to distribute our work, there are other toolkit to simplify the process of building, configuring, and managing clusters of virtual machines on Amazon’s Elastic Compute Cloud. It is designed by MIT and can be found <a href="http://star.mit.edu/cluster/">here</a> as an open source cluster-computing toolkit.</p>
-
+<p>Although we usually use the iPython notebook to distribute our work, there are other toolkit to simplify the process of building, configuring, and managing clusters of virtual machines on Amazon’s Elastic Compute Cloud. It is designed by MIT and can be found <a href="http://star.mit.edu/cluster/">here</a> as an open source cluster-computing toolkit. </p>
 <h4>Message Passing Interface (MPI)</h4>
-
-<p>MPI is a language-indeendent communications protocol used to program parallel computers. Both point-to-point and collective communication are supported. The MPI Python implementations include: pyMPI, mpi4py, pypar, MYMPI, and the MPI submodule in Scientific Python. <a href="http://www.mcs.anl.gov/research/projects/mpi/tutorial/index.html">Here</a> you may find some tutorials and exercises to MPI.</p>
-
+<p>MPI is a language-indeendent communications protocol used to program parallel computers. Both point-to-point and collective communication are supported. The MPI Python implementations include: pyMPI, mpi4py, pypar, MYMPI, and the MPI submodule in Scientific Python. <a href="http://www.mcs.anl.gov/research/projects/mpi/tutorial/index.html">Here</a> you may find some tutorials and exercises to MPI. </p>
 <h1><a name = "app"> </a> Appendix</h1>
-
 <h2>Recommended Reading</h2>
-
-<p>There are a few good background books on research, bioinformatics and machine learning that will help you become a productive member of the lab. These are organized more by topic and rating.
+<p>There are a few good background books on research, bioinformatics and machine learning that will help you become a productive member of the lab. These are organized more by topic and rating. 
 (xxx) = essential
 (xx) = recommended
 (x) = useful</p>
-
 <p>We primarily use <a href="http://www.mathworks.com">MATLAB</a>, <a href="http://www.python.org">Python</a> and C. Occasionally, you'll need to use another language such as bash shell, but only for very simple tasks that you could probably also do with one of those three. Knowing MATLAB will help you in most engineering jobs and academia. Google considers Python and C two of their core languages.</p>
-
 <p>Some tutorials to learn MATLAB are available <a href="http://www.mathworks.com/academia/student_center/tutorials/launchpad.html">here</a>. Don't buy any books or pay for anything. There are plenty of free resources to learn matlab out there.</p>
-
-<p>Go through the <a href="http://software-carpentry.org">Software Carpentry</a> lectures on <a href="http://software-carpentry.org/lessons.html">version control</a>, the shell, python, testing and MATLAB.</p>
-
+<p>Go through the <a href="http://software-carpentry.org">Software Carpentry</a> lectures on <a href="http://software-carpentry.org/lessons.html">version control</a> (xxx), the shell, python, testing and MATLAB. </p>
 <p><strong>To Be Developed</strong></p>
-
-<h2>Courses</h2>
-
-<p>https://www.coursera.org/course/matrix</p>
-
+<p>Check out the [Brown University course] (https://www.coursera.org/course/matrix) on Computer Science Application of Linear Algebra. </p>
 <h2>Software Engineering and Programming</h2>
-
 <p><a href="http://cm.bell-labs.com/cm/cs/tpop/">The Practice of Programming by Kernighan and Pike</a>(xxx)</p>
-
-<p>Try out a few sample bioinformatics problems to build your programming skills and thinking about bioinformatics problems.
+<p>Try out a few sample bioinformatics problems to build your programming skills and thinking about bioinformatics problems. 
  * <a href="http://rosalind.info">Rosalind</a></p>
-
 <h2>Plants in the Lab</h2>
-
 <p>There are two plants in the lab. Everyone in the lab is responsible of taking care of them, including regular watering and sunbathing. :)</p>
-
 <h2>Passing Your Qualifying Exam</h2>
-
-<p>You'll be asked question throughout your exam. A good way to answer a question you don't immediately know the answer to is: "We’ll see. We'll do X experiment. We have to look at the data and see if X is <strong><strong><em>. If so, we’ll do </em></strong></strong>, if not, we’ll do _______."</p>
-
+<p>You'll be asked question throughout your exam. A good way to answer a question you don't immediately know the answer to is: &quot;We’ll see. We'll do X experiment. We have to look at the data and see if X is _____. If so, we’ll do _____, if not, we’ll do _______.&quot;</p>
 <h3>Tips</h3>
-
 <p>Should be 2min maximum. Sets up ethos; speaker will handle pathos and logos.
-Don't say: "As everyone knows." - they don't.</p>
-
+Don't say: &quot;As everyone knows.&quot; - they don't.</p>
 <p>1) Say Speaker's Name (ask for phonetic pronunciation)</p>
-
 <p>2) Current affiliation of Speaker
 - Professor of Mathematics, University of X
 - Junior partner at company X
 - Director of Center of X</p>
-
 <p>3) Experience and achievements
 - Academic degree if appropriate
 - Current and/or previous positions, possibly with dates
 - publications (highlights)
 - awards &amp; prizes</p>
-
 <p>4) Concerning today's talk
 - Expert who has worked in the field/project for X months/years
 - Will present his/her/group's research on the subject
 - Will summarize project report or current project status.</p>
-
-<p> [1] Some of the ideas and structure for this document are from the Valve: Handbook for New Employees.</p>
-
+<p>[1] Some of the ideas and structure for this document are from the Valve: Handbook for New Employees.</p>
 <h1>Unfinished Business</h1>
-
 <p>We can also create our own virtual machine loaded with enthought and other stack options. Anyone want to take the initiative on this?</p>
-
 <p>TODO: reorganize the freezer as described in the gettingstarted file</p>
-
-<p>Things to do for the Getting Started File:</p>
-
+<p>Things to do for the Getting Started File: </p>
 <ol>
-<li>clean up the file to make it flow under the changes$</li>
-<li><p>recommended reading?$$</p></li>
-<li><p>What do we do with common code?</p></li>
+<li>clean up the file to make it flow under the changes$ </li>
+<li>recommended reading?$$</li>
+<li>What do we do with common code?</li>
 </ol>
 
 </body>
 </html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
