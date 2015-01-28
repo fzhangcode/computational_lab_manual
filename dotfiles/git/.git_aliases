@@ -17,23 +17,37 @@ alias g}='git stash pop'
 
 alias gs='git status -s && git stash list'
 alias gd='git diff'
-complete -o default -o nospace -F _git_diff gd
+if [ "$0" = "/bin/bash" ]; then
+	complete -o default -o nospace -F _git_diff gd
+fi
 alias gds='git diff --cached'
-complete -o default -o nospace -F _git_diff gds
+if [ "$0" = "/bin/bash" ]; then
+	complete -o default -o nospace -F _git_diff gds
+fi
 alias gdh='git diff HEAD'
+
+: <<'END'
 
 alias gdm='gd master...'
 
 alias ga='git add'
-complete -o default -o nospace -F _git_add ga
+if [ "$0" = "/bin/bash" ]; then
+	complete -o default -o nospace -F _git_add ga
+fi
 alias gap='git add -p'
 alias gc='git commit -v'
-complete -o default -o nospace -F _git_commit gc
+if [ "$0" = "/bin/bash" ]; then
+	complete -o default -o nospace -F _git_commit gc
+fi
 alias gca='gc -a'
-complete -o default -o nospace -F _git_add gca
+if [ "$0" = "/bin/bash" ]; then
+	complete -o default -o nospace -F _git_add gca
+fi
 
 alias gco="git checkout"
-complete -o default -o nospace -F _git_checkout gco
+if [ "$0" = "/bin/bash" ]; then
+	complete -o default -o nospace -F _git_checkout gco
+fi
 alias gcop="git checkout -p"
 
 alias gr="git reset"
@@ -57,7 +71,9 @@ alias gf='git fetch'
 alias gfa='git fetch --all'
 
 alias gb='git branch -v'
-complete -o default -o nospace -F _git_branch gb
+if [ "$0" = "/bin/bash" ]; then
+	complete -o default -o nospace -F _git_branch gb
+fi
 alias gbu='git branch -v --no-merged'
 alias gbum='git branch -v --no-merged master'
 
@@ -152,3 +168,4 @@ wrap_unless_empty() {
     echo -n "($1$2$3$4)"
   fi
 }
+END

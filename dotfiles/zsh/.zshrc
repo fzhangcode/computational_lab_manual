@@ -78,6 +78,7 @@ export PATH="/Users/pjflaherty/Library/Enthought/Canopy_64bit/User/bin:/Library/
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source $HOME/.git_aliases
 
 # Needed for gurobipy to work with Enthought python
 # https://groups.google.com/forum/?fromgroups=#!topic/gurobi/ArCkf4a40uU
