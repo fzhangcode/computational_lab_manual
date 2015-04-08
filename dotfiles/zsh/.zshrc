@@ -52,6 +52,8 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH="/Users/pjflaherty/Library/Enthought/Canopy_64bit/User/bin:/Library/Frameworks/EPD64.framework/Versions/Current/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:/Users/pjflaherty/bin:/usr/local/git/bin"
+export PATH=$PATH:"/Users/pjflaherty/AWS-ElasticBeanstalk-CLI-2.6.3/eb/linux/python2.7/"
+export PATH=$PATH:/usr/local/mysql/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -80,10 +82,15 @@ export PATH="/Users/pjflaherty/Library/Enthought/Canopy_64bit/User/bin:/Library/
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $HOME/.git_aliases
 
+# Use vi editing mode for command line
+set -o vi
+bindkey -v
+
 # Needed for gurobipy to work with Enthought python
 # https://groups.google.com/forum/?fromgroups=#!topic/gurobi/ArCkf4a40uU
 export DYLD_LIBRARY_PATH=/Library/gurobi600/mac64/lib:$DYLD_LIBRARY_PATH
-export DYLD_FRAMEWORK_PATH=/Library/gurobi550/mac64/lib:$DYLD_FRAMEWORK_PATH
+export DYLD_FRAMEWORK_PATH=/Library/gurobi600/mac64/lib:$DYLD_FRAMEWORK_PATH
 
 #$ install_name_tool -change /System/Library/Frameworks/Python.framework/Versions/2.7/Python /Users/USERNAME/Library/Enthought/Canopy_64bit/User/Python /Users/USERNAME/Library/Enthought/Canopy_64bit/User/lib/python2.7/site-packages/gurobipy/gurobipy.so
 # Replace USERNAME and run for each upgrade of gurobipy
+

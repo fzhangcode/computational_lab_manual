@@ -78,6 +78,7 @@ map <C-]> :execute "Ack " . expand("<cWORD>") . " " . "~/Dropbox/Notes/"<CR>
 " }}}
 
 " Common Misspellings --------------------------- {{{
+set spell spelllang=en_us
 iabbrev adn and
 iabbrev waht what
 iabbrev tehn then

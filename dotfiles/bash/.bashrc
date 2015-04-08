@@ -39,8 +39,8 @@ if [[ `hostname -s` = redwood ]]; then
 
 	# Added by Canopy installer on 2013-09-26
 	# VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make bashprompt show that Canopy is active, otherwise 1
-	#VIRTUAL_ENV_DISABLE_PROMPT=1 source /research/pjflaherty/Enthought/Canopy_64bit/User/bin/activate
-	#export PYTHONHOME=/research/pjflaherty/Enthought/Canopy_64bit/User/bin/
+	VIRTUAL_ENV_DISABLE_PROMPT=1 source /research/pjflaherty/Enthought/Canopy_64bit/User/bin/activate
+	export PYTHONHOME=/research/pjflaherty/Enthought/Canopy_64bit/User/bin/
 
 fi
 
