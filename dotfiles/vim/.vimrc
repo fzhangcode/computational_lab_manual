@@ -1,5 +1,6 @@
 " Basic settings ------------------------------- {{{
 " This must be first, because it changes other options as a side effect.
+set shell=/bin/bash
 set nocompatible
 filetype off
 
@@ -16,13 +17,8 @@ Plugin 'xolox/vim-notes' " provides vim-notes
 Plugin 'xolox/vim-misc' " required for vim-notes
 Plugin 'plasticboy/vim-markdown' " provides markdown syntax highlighting
 Plugin 'vimoutliner/vimoutliner' " provides outliner
-Plugin 'bling/vim-airline' " provides advanced status line
-Plugin 'lervag/vim-latex' " provides latex support
-
+Plugin 'LaTeX-Suite-aka-Vim-LaTeX' " provides latex
 call vundle#end()
-
-" Activate pathogen
-" call pathogen#infect()
 
 " Turn on syntax highlighting
 syntax on
@@ -140,5 +136,11 @@ nmap <2-LeftMouse> :SearchNotes<CR>
 " }}}
 
 " vim-airline settings ------------------------- {{{
+set laststatus=2
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline_powerline_fonts = 1
 let g:airline#extentions#tabline#enabled = 1
 " }}}
