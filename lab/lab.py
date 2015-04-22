@@ -34,13 +34,22 @@ def execute(command):
     if con:
         con.close()
         
-#list all tags
+
 def list_tags():
+    ''' Executes a sql command string on the tag table in the database.
+    :param command: 
+    :return: All elements in the tags table
+    '''
     execute("SELECT * FROM tags;")
 
 #list all records
 def list_records():
+    ''' Executes a sql command string on the records table in the database.
+    :param command: 
+    :return: All elements in the records table
+    '''
     execute("SELECT * FROM records;")
+
 
 if __name__ == "__main__":
 
