@@ -33,6 +33,14 @@ def execute(command):
         cursor.execute(command)
     if con:
         con.close()
+        
+#list all tags
+def list_tags():
+    execute("SELECT * FROM tags;")
+
+#list all records
+def list_records():
+    execute("SELECT * FROM records;")
 
 if __name__ == "__main__":
 
@@ -53,3 +61,5 @@ if __name__ == "__main__":
     # We can also close the connection if we are done with it.
     # Just be sure any changes have been committed or they will be lost.
     conn.close()
+    
+    
