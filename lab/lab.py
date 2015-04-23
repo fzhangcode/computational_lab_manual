@@ -54,7 +54,7 @@ def list_records():
 def search_files_given_tag(tag):
     ''' Searches and returns all files associated with given tag
     :param command: tag (files associated with)
-    :return: All files associate with tag
+    :return: All files associated with tag
     '''
     record_key_list = []
     final_list = []
@@ -62,7 +62,7 @@ def search_files_given_tag(tag):
     con = None
 
     #attempt connection, ENV VARIABLE***
-    con = lite.connect('C:/sqlite/lab_db.db')    
+    con = lite.connect(dbfile)    
     with con:
         #Get the tags key
         cursor = con.cursor()    
@@ -88,6 +88,39 @@ def search_files_given_tag(tag):
         print "\nSearch results"
         for result in final_list:
             print str(result)
+            
+def search_tags_given_file(file):
+    ''' Searches and returns all tags associated with given file
+    :param command: file (tags associated with)
+    :return: All tags associated with file
+    '''
+    final_list = []
+    tag_key_list = []
+    con = lite.connect(dbfile)    
+    with con:
+        cursor = con.cursor()    
+        cursor.execute("SELECT key FROM records WHERE location = '%s'" % file)
+        record_key = cursor.fetchall()
+        key_int = record_key[0][0]
+        # Go to relational table
+        cursor.execute("SELECT tag_ley FROM record_tag WHERE record_key = %d" % key_int)
+        record_keys_found = cursor.fetchall()
+        ## get all the files with that key
+        for i in range(len(record_keys_found)):
+            key_to_append = record_keys_found[i][0]
+            tag_key_list.append(key_to_append)
+            
+        ##Find tags
+        for tag in tag_key_list:
+            tag = int(tag)
+            cursor.execute("SELECT text from tags WHERE key = %d" % tag)
+            final = cursor.fetchall()
+            final_list.append(final) 
+
+        #print results
+        print "\nSearch results:"
+        for result in final_list:
+            print str(result[0][0])
 
 if __name__ == "__main__":
 
