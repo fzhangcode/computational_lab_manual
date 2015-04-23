@@ -50,6 +50,44 @@ def list_records():
     '''
     execute("SELECT * FROM records;")
 
+#Search for all files with a tag
+def search_files_given_tag(tag):
+    ''' Searches and returns all files associated with given tag
+    :param command: tag (files associated with)
+    :return: All files associate with tag
+    '''
+    record_key_list = []
+    final_list = []
+    # start with con, in case connection can't be made
+    con = None
+
+    #attempt connection, ENV VARIABLE***
+    con = lite.connect('C:/sqlite/lab_db.db')    
+    with con:
+        #Get the tags key
+        cursor = con.cursor()    
+        cursor.execute("SELECT key FROM tags WHERE text = '%s'" % tag)
+        tag_key = cursor.fetchall()
+        key_parsed = tag_key[0][0]
+
+        # Go to record_tag table
+        cursor.execute("SELECT record_key FROM record_tag WHERE tag_key = %d" % key_parsed)
+        record_keys_found = cursor.fetchall()
+        ## get all the files with that key
+        for i in range(len(record_keys_found)):
+            key_to_append = record_keys_found[i][0]
+            record_key_list.append(key_to_append)
+   
+        ##Use the record key to find the record
+        for record in range(len(record_key_list)):
+            cursor.execute("SELECT location FROM records WHERE key = %d" % record_key_list[record])
+            final = cursor.fetchall()
+            final_list.append(final) 
+
+        #p\Print results
+        print "\nSearch results"
+        for result in final_list:
+            print str(result)
 
 if __name__ == "__main__":
 
