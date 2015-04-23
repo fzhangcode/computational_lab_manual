@@ -54,11 +54,23 @@ def add_record(key, record):
         con.commit()
           
 def add_tag(key, tag):
+    ##TESTED, WORKS
     ''' Executes a sql command string on the record table and adds record
     :param command: key (associated with tag), tag (to add)
     :return: 
     '''
-    execute("INSERT INTO tags VALUES(key, tag);")
+    ''' Executes a sql command string on the record table and adds record
+    :param command: key (associated with record), record (to add)
+    :return: 
+    '''
+    con = lite.connect(dbfile) or None
+
+    with con:
+        global cursor
+        cursor = con.cursor()
+        cursor.execute("INSERT INTO tags VALUES(?, ?);", (key,tag))
+        con.commit()
+          
    
 def add_record_tag(record, tag):
     ## TO DO: MAKE MORE USER FRIENDLY
@@ -66,7 +78,15 @@ def add_record_tag(record, tag):
     :param command: record (key), tag (key)
     :return: 
     '''
-    execute("INSERT INTO record_tag VALUES(record, tag);") 
+    con = lite.connect(dbfile) or None
+
+    with con:
+        global cursor
+        cursor = con.cursor()
+        cursor.execute("INSERT INTO record_tag VALUES(?, ?);", (record,tag))
+        con.commit()
+          
+   
               
 def list_tags():
     ## TESTED, WORKS
@@ -94,7 +114,20 @@ def list_records():
     rows = cursor.fetchall()
     for row in rows:
         print row[0], row[1]
-        
+ 
+ #list all records
+def list_record_tags():
+    ##TESTED, WORKS
+    ''' Executes a sql command string on the record_tags table in the database.
+    :param command: 
+    :return: All elements in the record_tags table
+    '''
+
+    execute("SELECT * FROM record_tag;")
+    rows = cursor.fetchall()
+    for row in rows:
+        print row[0], row[1]       
+                      
 #Search for all files with a tag
 def search_files_given_tag(tag):
     ''' Searches and returns all files associated with given tag
