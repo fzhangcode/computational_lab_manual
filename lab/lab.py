@@ -14,7 +14,11 @@ logging.basicConfig(filename='lab.log', level=logging.INFO)
 # args = parser.parse_args()
 # print(args.lab_action)
 
+##python can't regognize my manually made environment variables
+os.environ['LABDB'] = 'C:\sqlite\lab_db.db'
+
 dbfile = os.getenv('LABDB', None)
+print dbfile
 if dbfile is None:
     logging.error("Could not locate lab database. Check that LABDB environment variable is set to database location.")
 
@@ -26,21 +30,29 @@ def execute(command):
     '''
 
     # connect to sqlite3 database
+    global con
     con = lite.connect(dbfile) or None
 
     with con:
+        global cursor
         cursor = con.cursor()
         cursor.execute(command)
-    if con:
-        con.close()
-        
+        con.commit()
+
 def add_record(key, record):
+    ## TESTED, WORKS
     ''' Executes a sql command string on the record table and adds record
     :param command: key (associated with record), record (to add)
     :return: 
     '''
-    execute("INSERT INTO records VALUES(key, record);")
-    
+    con = lite.connect(dbfile) or None
+
+    with con:
+        global cursor
+        cursor = con.cursor()
+        cursor.execute("INSERT INTO records VALUES(?, ?);", (key,record))
+        con.commit()
+          
 def add_tag(key, tag):
     ''' Executes a sql command string on the record table and adds record
     :param command: key (associated with tag), tag (to add)
@@ -57,20 +69,32 @@ def add_record_tag(record, tag):
     execute("INSERT INTO record_tag VALUES(record, tag);") 
               
 def list_tags():
+    ## TESTED, WORKS
     ''' Executes a sql command string on the tag table in the database.
     :param command: 
     :return: All elements in the tags table
     '''
-    execute("SELECT * FROM tags;")
 
+    execute("SELECT * FROM tags;")
+    rows = cursor.fetchall()
+    for row in rows:
+        print row[0], row[1]
+
+
+    
 #list all records
 def list_records():
+    ##TESTED, WORKS
     ''' Executes a sql command string on the records table in the database.
     :param command: 
     :return: All elements in the records table
     '''
-    execute("SELECT * FROM records;")
 
+    execute("SELECT * FROM records;")
+    rows = cursor.fetchall()
+    for row in rows:
+        print row[0], row[1]
+        
 #Search for all files with a tag
 def search_files_given_tag(tag):
     ''' Searches and returns all files associated with given tag
@@ -145,22 +169,24 @@ def search_tags_given_file(file):
 
 if __name__ == "__main__":
 
-    # Attempt to connect to lab database
-    conn = lite.connect(dbfile)
-    c = conn.cursor()
-
-    # Create table
-    c.execute('''CREATE TABLE stocks
-             (date text, trans text, symbol text, qty real, price real)''')
-
-    # Insert a row of data
-    c.execute("INSERT INTO stocks VALUES ('2006-01-05','BUY','RHAT',100,35.14)")
-
-    # Save (commit) the changes
-    conn.commit()
-
-    # We can also close the connection if we are done with it.
-    # Just be sure any changes have been committed or they will be lost.
-    conn.close()
-    
-    
+#    # Attempt to connect to lab database
+#    conn = lite.connect(dbfile)
+#    c = conn.cursor()
+#
+#    # Create table
+#    c.execute('''CREATE TABLE stocks
+#             (date text, trans text, symbol text, qty real, price real)''')
+#
+#    # Insert a row of data
+#    c.execute("INSERT INTO stocks VALUES ('2006-01-05','BUY','RHAT',100,35.14)")
+#
+#    # Save (commit) the changes
+#    conn.commit()
+#
+#    # We can also close the connection if we are done with it.
+#    # Just be sure any changes have been committed or they will be lost.
+#    conn.close()
+#    
+    list_tags();
+    if con:
+        con.close()
