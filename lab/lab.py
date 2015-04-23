@@ -74,6 +74,7 @@ def add_tag(key, tag):
    
 def add_record_tag(record, tag):
     ## TO DO: MAKE MORE USER FRIENDLY
+    ##TESTED, WORKS
     ''' Executes a sql command string on the record_tag table to add association
     :param command: record (key), tag (key)
     :return: 
@@ -130,6 +131,7 @@ def list_record_tags():
                       
 #Search for all files with a tag
 def search_files_given_tag(tag):
+    #TESTED, WORKS
     ''' Searches and returns all files associated with given tag
     :param command: tag (files associated with)
     :return: All files associated with tag
@@ -143,31 +145,32 @@ def search_files_given_tag(tag):
     con = lite.connect(dbfile)    
     with con:
         #Get the tags key
-        cursor = con.cursor()    
-        cursor.execute("SELECT key FROM tags WHERE text = '%s'" % tag)
+        cursor = con.cursor()   
+        cursor.execute("SELECT key FROM tags WHERE text = '%s';" % tag)
         tag_key = cursor.fetchall()
         key_parsed = tag_key[0][0]
-
+        
         # Go to record_tag table
-        cursor.execute("SELECT record_key FROM record_tag WHERE tag_key = %d" % key_parsed)
+        cursor.execute("SELECT record_key FROM record_tag WHERE tag_key = %d ;" % key_parsed)
         record_keys_found = cursor.fetchall()
         ## get all the files with that key
         for i in range(len(record_keys_found)):
             key_to_append = record_keys_found[i][0]
             record_key_list.append(key_to_append)
-   
+        
         ##Use the record key to find the record
         for record in range(len(record_key_list)):
-            cursor.execute("SELECT location FROM records WHERE key = %d" % record_key_list[record])
+            cursor.execute("SELECT location FROM records WHERE key = %d ;" % record_key_list[record])
             final = cursor.fetchall()
             final_list.append(final) 
 
         #p\Print results
         print "\nSearch results"
         for result in final_list:
-            print str(result)
+            print str(result[0][0])
             
 def search_tags_given_file(file):
+    ##TESTED, WORKS
     ''' Searches and returns all tags associated with given file
     :param command: file (tags associated with)
     :return: All tags associated with file
@@ -180,8 +183,9 @@ def search_tags_given_file(file):
         cursor.execute("SELECT key FROM records WHERE location = '%s'" % file)
         record_key = cursor.fetchall()
         key_int = record_key[0][0]
+        
         # Go to relational table
-        cursor.execute("SELECT tag_ley FROM record_tag WHERE record_key = %d" % key_int)
+        cursor.execute("SELECT tag_key FROM record_tag WHERE record_key = %d" % key_int)
         record_keys_found = cursor.fetchall()
         ## get all the files with that key
         for i in range(len(record_keys_found)):
