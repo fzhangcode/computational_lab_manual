@@ -34,7 +34,28 @@ def execute(command):
     if con:
         con.close()
         
-
+def add_record(key, record):
+    ''' Executes a sql command string on the record table and adds record
+    :param command: key (associated with record), record (to add)
+    :return: 
+    '''
+    execute("INSERT INTO records VALUES(key, record);")
+    
+def add_tag(key, tag):
+    ''' Executes a sql command string on the record table and adds record
+    :param command: key (associated with tag), tag (to add)
+    :return: 
+    '''
+    execute("INSERT INTO tags VALUES(key, tag);")
+   
+def add_record_tag(record, tag):
+    ## TO DO: MAKE MORE USER FRIENDLY
+    ''' Executes a sql command string on the record_tag table to add association
+    :param command: record (key), tag (key)
+    :return: 
+    '''
+    execute("INSERT INTO record_tag VALUES(record, tag);") 
+              
 def list_tags():
     ''' Executes a sql command string on the tag table in the database.
     :param command: 
