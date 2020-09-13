@@ -1,3 +1,3 @@
 # computational_lab_manual
 
-We wrote a getting-started file for reproducible research in computational science (computational biology).
+This repo is about detailed steps for reproducible research in computational science including computational biology, immunogenomics, and data management.
